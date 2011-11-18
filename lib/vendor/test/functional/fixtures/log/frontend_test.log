@@ -1,0 +1,18 @@
+Nov 09 23:11:47 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Nov 09 23:11:48 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /filter with parameters array (  'module' => 'filter',  'action' => 'index',)
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "myFilter"
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 09 23:11:49 symfony [info] {filterActions} Call "filterActions->executeIndex()"
+Nov 09 23:11:49 symfony [info] {sfWebResponse} Send content (46 o)
+Nov 09 23:11:49 symfony [info] {sfPatternRouting} Match route "default" (/:module/:action/*) for /filter/indexWithForward with parameters array (  'module' => 'filter',  'action' => 'indexWithForward',)
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "myFilter"
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 09 23:11:49 symfony [info] {filterActions} Call "filterActions->executeIndexWithForward()"
+Nov 09 23:11:49 symfony [info] {filterActions} Forward to action "filter/index"
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "sfFakeRenderingFilter"
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "myFilter"
+Nov 09 23:11:49 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 09 23:11:49 symfony [info] {filterActions} Call "filterActions->executeIndex()"
+Nov 09 23:11:49 symfony [info] {sfWebResponse} Send content (68 o)

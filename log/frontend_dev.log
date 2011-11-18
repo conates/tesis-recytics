@@ -1,0 +1,40 @@
+Nov 16 18:47:29 symfony [info] {sfPatternRouting} Match route "homepage" (/) for / with parameters array (  'module' => 'default',  'action' => 'index',)
+Nov 16 18:47:31 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 16 18:47:31 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 16 18:47:31 symfony [info] {defaultActions} Call "defaultActions->executeIndex()"
+Nov 16 18:47:31 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\tesis\lib\vendor\lib/controller/default/templates/indexSuccess.php"
+Nov 16 18:47:31 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\tesis\lib\vendor\lib\controller\default\templates/defaultLayout.php"
+Nov 16 18:47:31 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\tesis\lib\vendor\lib\controller\default\templates/defaultLayout.php"
+Nov 16 18:47:31 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 16 18:47:31 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 16 18:47:31 symfony [info] {sfWebDebugLogger} Configuration 2076.66 ms (9)
+Nov 16 18:47:31 symfony [info] {sfWebDebugLogger} Factories 1915.69 ms (1)
+Nov 16 18:47:31 symfony [info] {sfWebDebugLogger} Action "default/index" 0.27 ms (1)
+Nov 16 18:47:31 symfony [info] {sfWebDebugLogger} View "Success" for "default/index" 520.09 ms (1)
+Nov 16 18:47:32 symfony [info] {sfWebResponse} Send content (29845 o)
+Nov 17 00:41:42 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /job with parameters array (  'module' => 'job',  'action' => 'index',)
+Nov 17 00:41:42 symfony [info] {sfFrontWebController} Action "job/index" does not exist
+Nov 17 00:41:43 symfony [err] {sfError404Exception} Action "job/index" does not exist.
+Nov 17 00:41:43 symfony [info] {sfWebResponse} Send status "HTTP/1.1 404 Not Found"
+Nov 17 00:41:43 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 17 00:41:43 symfony [info] {sfWebDebugLogger} Configuration 11769.41 ms (5)
+Nov 17 00:41:43 symfony [info] {sfWebDebugLogger} Factories 1989.50 ms (1)
+Nov 17 00:42:03 symfony [info] {sfPatternRouting} Match route "default_index" (/:module) for /recycontrol with parameters array (  'module' => 'recycontrol',  'action' => 'index',)
+Nov 17 00:42:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 17 00:42:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 17 00:42:04 symfony [info] {RecycontrolActions} Call "RecycontrolActions->executeIndex()"
+Nov 17 00:42:04 symfony [info] {RecycontrolActions} Forward to action "default/module"
+Nov 17 00:42:04 symfony [info] {sfFilterChain} Executing filter "sfRenderingFilter"
+Nov 17 00:42:04 symfony [info] {sfFilterChain} Executing filter "sfExecutionFilter"
+Nov 17 00:42:04 symfony [info] {defaultActions} Call "defaultActions->executeModule()"
+Nov 17 00:42:04 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\tesis\lib\vendor\lib/controller/default/templates/moduleSuccess.php"
+Nov 17 00:42:04 symfony [info] {sfPHPView} Decorate content with "C:\xampp\htdocs\tesis\lib\vendor\lib\controller\default\templates/defaultLayout.php"
+Nov 17 00:42:04 symfony [info] {sfPHPView} Render "C:\xampp\htdocs\tesis\lib\vendor\lib\controller\default\templates/defaultLayout.php"
+Nov 17 00:42:04 symfony [info] {sfWebResponse} Send status "HTTP/1.1 200 OK"
+Nov 17 00:42:04 symfony [info] {sfWebResponse} Send header "Content-Type: text/html; charset=utf-8"
+Nov 17 00:42:04 symfony [info] {sfWebDebugLogger} Configuration 723.17 ms (13)
+Nov 17 00:42:04 symfony [info] {sfWebDebugLogger} Factories 298.10 ms (1)
+Nov 17 00:42:04 symfony [info] {sfWebDebugLogger} Action "recycontrol/index" 615.59 ms (1)
+Nov 17 00:42:04 symfony [info] {sfWebDebugLogger} Action "default/module" 0.26 ms (1)
+Nov 17 00:42:04 symfony [info] {sfWebDebugLogger} View "Success" for "default/module" 333.46 ms (1)
+Nov 17 00:42:04 symfony [info] {sfWebResponse} Send content (32327 o)

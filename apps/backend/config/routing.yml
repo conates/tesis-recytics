@@ -1,0 +1,108 @@
+container:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Container
+    module:               AdministrarContenedor
+    prefix_path:          /AdministrarContenedor
+    column:               id
+    with_wildcard_routes: true
+
+ventachatarra:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ventachatarra
+    module:               AdministrarVentaChatarra
+    prefix_path:          /AdministrarVentaChatarra
+    column:               id
+    with_wildcard_routes: true
+
+categoria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                categoria
+    module:               AdministrarCategorias
+    prefix_path:          /AdministrarCategorias
+    column:               id
+    with_wildcard_routes: true
+
+pieza:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                pieza
+    module:               AdministrarPiezas
+    prefix_path:          /AdministrarPiezas
+    column:               id
+    with_wildcard_routes: true
+
+ventapieza:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ventapieza
+    module:               AdministrarVentaPieza
+    prefix_path:          /AdministrarVentaPieza
+    column:               id
+    with_wildcard_routes: true
+
+ventaequipo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ventaequipo
+    module:               AdministrarVentaEquipo
+    prefix_path:          /AdministrarVentaEquipo
+    column:               id
+    with_wildcard_routes: true
+
+cliente:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                cliente
+    module:               AdministrarClientes
+    prefix_path:          /AdministrarClientes
+    column:               id
+    with_wildcard_routes: true
+
+empleado:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                empleado
+    module:               AdministrarEmpleados
+    prefix_path:          /AdministrarEmpleados
+    column:               id
+    with_wildcard_routes: true
+
+usuario:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                usuario
+    module:               AdministrarUsuarios
+    prefix_path:          /AdministrarUsuarios
+    column:               id
+    with_wildcard_routes: true
+
+equipo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                equipo
+    module:               AdministrarEquipos
+    prefix_path:          /AdministrarEquipos
+    column:               id
+    with_wildcard_routes: true
+
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+
+# apps/backend/config/routing.yml
+homepage:
+ url:   /
+ param: { module: default, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

@@ -1,0 +1,118 @@
+Usuario:
+  columns:
+    id: 						{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+    rut:						{ type: integer(10), notnull: true }
+    nombres:					{ type: string(45), notnull: true }
+    apellidos:					{ type: string(45), notnull: true }
+    email:						{ type: string(45), notnull: true,unique: true }
+    fecha_nac:					{ type: timestamp }
+    direccion:					{ type: string(45) }
+    ciudad:						{ type: string(45) }
+    telefono:					{ type: integer(10), notnull: true }
+
+Equipo:
+  columns:
+   id:         					{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+   origen:   					{ type: string(45) }
+   marca:      					{ type: string(45), notnull:true }
+   peso:       					{ type: integer(10) }
+   estado:     					{ type: boolean, notnull:true }
+   detalle:    					{ type: string(255) }
+   usuario_id: 					{ type: integer(10) }
+   categoria_id: 				{ type: integer(10) }
+   empleado_id: 				{ type: integer(10) }
+   venta_equipo_id:				{ type: integer(10) }
+  relations: 
+   usuario: 					{ foreignAlias: equipos }  
+   categoria: 					{ foreignAlias: equipos, onDelete: CASCADE } 
+   empleado: 					{ foreignAlias: equipos, onDelete: CASCADE }
+   VentaEquipo:                 { foreignAlias: equipos }
+
+VentaEquipo:
+  columns:
+    id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+    fecha:     					{ type: timestamp, notnull:true }
+    tipo:       				{ type: string(45), notnull:true }
+    monto:      				{ type: integer(10), notnull:true }
+    detalle:    				{ type: string(255) }
+
+Categoria:
+  columns:
+   id:               			{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+   nombre_categoria: 			{ type: string(45), notnull:true }
+   descripcion:    				{ type: string(45), notnull:true } 
+   tipo:             			{ type: string(45), notnull:true }
+
+Pieza:
+  columns:
+    id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+    marca:      				{ type: string(45) }
+    estado:     				{ type: boolean }
+    detalle:    				{ type: string(45) }
+    usuario_id:					{ type: integer(10) }
+    categoria_id: 				{ type: integer(10) }
+    empleado_id: 				{ type: integer(10) }
+    container_id:				{ type: integer(10) }
+    venta_pieza_id:				{ type: integer(10) }
+  relations:
+    usuario:					{ foreignAlias: Piezas, onDelete: CASCADE }
+    categoria: 					{ foreignAlias: Piezas, onDelete: CASCADE } 
+    empleado: 					{ foreignAlias: Piezas, onDelete: CASCADE }
+    container:                  { foreignAlias: Piezas, onDelete: CASCADE }
+    VentaPieza:                 { foreignAlias: Piezas, onDelete: CASCADE }
+
+Empleado:
+  columns:
+    id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+    rut:        				{ type: string(10), notnull:true }
+    nombres:    				{ type: string(45), notnull:true }
+    apellidos:  				{ type: string(45), notnull:true }
+    email:      				{ type: string(45), notnull:true,unique: true }        
+    fecha_nac:  				{ type: timestamp }
+    direccion:  				{ type: string(45) }
+    ciudad_residencia:  		{ type: string(45) }
+    telefono:          			{ type: integer(10), notnull:true }
+    fecha_contrato:     		{ type: timestamp, notnull:true }
+    fecha_fin_contrato: 		{ type: timestamp, notnull:true }
+    sueldo:            			{ type: integer(10) }
+    nombre_usuario:     		{ type: integer(45), notnull:true }
+
+VentaPieza:
+  columns:
+    id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+    fecha:     					{ type: timestamp, notnull:true }
+    tipo:       				{ type: string(45), notnull:true }
+    monto:     					{ type: integer(10), notnull:true }
+    detalle:    				{ type: string(255) }
+    cliente:    				{ type: string(45), notnull:true }
+    gastos_envio: 				{ type: integer(10) }
+
+VentaChatarra:
+  columns:
+    id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+    monto:      				{ type: integer(10), notnull:true }
+    fecha:      				{ type: timestamp, notnull:true }
+    detalle:   					{ type: string(255), notnull:true }
+    tipo:      					{ type: string(45), notnull:true }
+    cliente_id:					{ type: integer(10) }
+  relations:
+    cliente:					{ foreignAlias: VentaChatarras}
+
+Container:
+  columns:
+    id:        					{ type: integer(10), primary: true, notnull: true, autoincrement: true } 
+    capacidad: 					{ type: integer(10), notnull:true }
+    tipo:      					{ type: string(45), notnull:true }
+    venta_chatarra_id:			{ type: integer(10) }
+  relations:
+    VentaChatarra:			    { foreignAlias: Containers }
+
+Cliente:
+  columns:
+    id:							{ type: integer(10), primary: true, notnull: true, autoincrement: true } 
+    rut:        				{ type: string(10), notnull:true }
+    razon_social:				{ type: string(45), notnull:true }
+    giro:       				{ type: string(45), notnull:true }
+    nombre_representante: 		{ type: string(45), notnull:true }
+    direccion:          		{ type: string(45) }
+    telefono_contacto:  		{ type: integer(45) }
