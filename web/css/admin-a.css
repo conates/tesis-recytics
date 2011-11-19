@@ -1,6 +1,12 @@
+body
+{
+  background: none;
+}
+
 #container
 {
   width: 100%;
+  background: none;
 }
 
 #content
@@ -14,7 +20,8 @@
   padding: 10px;
   padding-left: 20px;
   margin-bottom: 20px;
-  background-color: #e1dcbb;
+  border-bottom: 1px solid #aaa;
+  background-color: #fff;
 }
 
 #menu li
@@ -29,6 +36,7 @@
   background: transparent;
   margin-bottom: 20px;
   font-size: 140%;
+  color: #000;
 }
 
 td, th
@@ -45,10 +53,13 @@ th
 {
   clear: both;
   padding: 25px;
+  margin-top: 0;
+  height: auto;
   font-family: arial,sans-serif;
   font-size: 80%;
   float: right;
   color: #666;
+  background: none;
 }
 
 #footer img
@@ -72,4 +83,9 @@ th
 {
   display: inline;
   float: none;
+}
+
+#header h1
+{
+  width: auto;
 }

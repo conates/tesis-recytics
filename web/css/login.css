@@ -1,0 +1,97 @@
+#apDiv1 {
+	position:absolute;
+	left:250px;
+	top:121px;
+	width:465px;
+	height:269px;
+	z-index:1;
+	background-color: #000000;
+	-moz-border-radius: 1em;
+    -webkit-border-radius:1px;
+    border-radius: 1em;
+    border: 1px solid white;
+}
+#apDiv2 {
+	position:absolute;
+	left:256px;
+	top:129px;
+	width:450px;
+	height:255px;
+	z-index:2;
+	background-color: #ffffff;
+	-moz-border-radius: 1em;
+    -webkit-border-radius:1px;
+    border-radius: 1em;
+    border: 1px solid white;
+}
+#apDiv3 {
+	position:absolute;
+	left:345px;
+	top:144px;
+	width:264px;
+	height:74px;
+	z-index:3;
+	background-image:url(../images/logo-login.png);
+}
+#apDiv4 {
+	position:absolute;
+	left:508px;
+	top:255px;
+	width:84px;
+	height:20px;
+	z-index:4;
+}
+#apDiv5 {
+	position:absolute;
+	left:523px;
+	top:253px;
+	width:149px;
+	height:25px;
+	z-index:5;
+}
+#apDiv6 {
+	position:absolute;
+	left:437px;
+	top:281px;
+	width:84px;
+	height:23px;
+	z-index:6;
+}
+#apDiv7 {
+	position:absolute;
+	left:523px;
+	top:282px;
+	width:149px;
+	height:24px;
+	z-index:7;
+}
+#apDiv8 {
+	position:absolute;
+	left:579px;
+	top:322px;
+	width:55px;
+	height:27px;
+	z-index:8;
+}
+#apDiv9 {
+	position:absolute;
+	left:300px;
+	top:50px;
+	width:700px;
+	height:400px;
+	z-index:1;
+	background-color: #2525a4;
+	-moz-border-radius: 1em;
+    -webkit-border-radius:1px;
+    border-radius: 1em;
+    border: 7px solid #ffd925;
+}
+.login{
+width:350px;
+position:absolute;
+text-align: left;
+margin: 0 auto;
+left:-200px;
+font-family: verdana;
+font-size: 12px;
+}
