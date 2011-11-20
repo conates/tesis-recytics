@@ -19,13 +19,10 @@
                         </a></h1>
                 </div>
             </div>
-            <div id="menu">
-                <ul>
-                    <li>
-                        <?php echo include_partial('global/menu'); ?>
-                    </li>
-                </ul>
-            </div>
+            <?php if (!$this->getUser()->isAuthenticated()) { ?>
+                <div id="menu"><?php echo include_partial('global/menu'); ?></div>
+            <?php } ?>
+
 
             <div id="content">
                 <?php echo $sf_content ?>
