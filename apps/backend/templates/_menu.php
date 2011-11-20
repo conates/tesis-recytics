@@ -9,6 +9,6 @@
     <li> <?php echo link_to('Venta de Chatarra', '@ventachatarra') ?></li>
     <li> <?php echo link_to('Container', '@container') ?></li>
     <li> <?php echo link_to('Cliente', '@cliente') ?></li>
-    <li> <?php echo link_to('Salir', '@logout') ?></li>
+    <li> <?php echo link_to('Salir', '@sf_guard_signout') ?></li>
 </ul>
 
