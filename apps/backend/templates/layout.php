@@ -19,7 +19,7 @@
                         </a></h1>
                 </div>
             </div>
-            <?php if (!$sf_user->isAuthenticated()) { ?>
+            <?php if ($sf_user->isAuthenticated()) { ?>
                 <div id="menu"><?php echo include_partial('global/menu'); ?></div>
             <?php } ?>
 
