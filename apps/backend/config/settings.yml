@@ -26,7 +26,7 @@ all:
   .settings:
     # Form security secret (CSRF protection)
     csrf_secret:            05bec9a14387f511db7319b81060ed2ae323edec
-    enabled_modules:        [default,sfGuardAuth]
+    enabled_modules:        [default,sfGuardAuth,sfGuardUser]
     # Output escaping settings
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS

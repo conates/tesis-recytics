@@ -1,14 +1,52 @@
-Usuario:
+sfGuardUser:
+  actAs: [Timestampable]
   columns:
-    id: 						{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    rut:						{ type: integer(10), notnull: true }
-    nombres:					{ type: string(45), notnull: true }
-    apellidos:					{ type: string(45), notnull: true }
-    email:						{ type: string(45), notnull: true,unique: true }
-    fecha_nac:					{ type: timestamp }
-    direccion:					{ type: string(45) }
-    ciudad:						{ type: string(45) }
-    telefono:					{ type: integer(10), notnull: true }
+    first_name: string(255)
+    last_name: string(255)
+    email_address:
+      type: string(255)
+      notnull: false
+      unique: false
+    username:
+      type: string(128)
+      notnull: true
+      unique: true
+    algorithm:
+      type: string(128)
+      default: sha1
+      notnull: true
+    salt: string(128)
+    password: 
+      type: string(128)
+      notnull: true
+    is_active:
+      type: boolean
+      default: 1
+    is_super_admin:
+      type: boolean
+      default: false
+    last_login:
+      type: timestamp
+  indexes:
+    is_active_idx:
+      fields: [is_active]
+  relations:
+    Groups:
+      class: sfGuardGroup
+      local: user_id
+      foreign: group_id
+      refClass: sfGuardUserGroup
+      foreignAlias: Users
+    Permissions:
+      class: sfGuardPermission
+      local: user_id
+      foreign: permission_id
+      refClass: sfGuardUserPermission
+      foreignAlias: Users
+    Empleado:
+      local: id
+      foreign: user_id
+      type: one
 
 Equipo:
   columns:
@@ -18,15 +56,18 @@ Equipo:
    peso:       					{ type: integer(10) }
    estado:     					{ type: boolean, notnull:true }
    detalle:    					{ type: string(255) }
-   usuario_id: 					{ type: integer(10) }
+   user_id:						{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
    categoria_id: 				{ type: integer(10) }
    empleado_id: 				{ type: integer(10) }
    venta_equipo_id:				{ type: integer(10) }
   relations: 
-   usuario: 					{ foreignAlias: equipos }  
    categoria: 					{ foreignAlias: equipos, onDelete: CASCADE } 
    empleado: 					{ foreignAlias: equipos, onDelete: CASCADE }
    VentaEquipo:                 { foreignAlias: equipos }
+   sfGuardUser:
+     local: user_id
+     foreign: id
+     type: one
 
 VentaEquipo:
   columns:
@@ -49,17 +90,20 @@ Pieza:
     marca:      				{ type: string(45) }
     estado:     				{ type: boolean }
     detalle:    				{ type: string(45) }
-    usuario_id:					{ type: integer(10) }
+    user_id:					{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
     categoria_id: 				{ type: integer(10) }
     empleado_id: 				{ type: integer(10) }
     container_id:				{ type: integer(10) }
     venta_pieza_id:				{ type: integer(10) }
-  relations:
-    usuario:					{ foreignAlias: Piezas, onDelete: CASCADE }
+  relations:   
     categoria: 					{ foreignAlias: Piezas, onDelete: CASCADE } 
     empleado: 					{ foreignAlias: Piezas, onDelete: CASCADE }
     container:                  { foreignAlias: Piezas, onDelete: CASCADE }
     VentaPieza:                 { foreignAlias: Piezas, onDelete: CASCADE }
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
 
 Empleado:
   columns:
@@ -75,7 +119,12 @@ Empleado:
     fecha_contrato:     		{ type: timestamp, notnull:true }
     fecha_fin_contrato: 		{ type: timestamp, notnull:true }
     sueldo:            			{ type: integer(10) }
-    nombre_usuario:     		{ type: integer(45), notnull:true }
+    user_id:					{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
 
 VentaPieza:
   columns:

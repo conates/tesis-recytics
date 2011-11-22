@@ -70,15 +70,6 @@ empleado:
     column:               id
     with_wildcard_routes: true
 
-usuario:
-  class: sfDoctrineRouteCollection
-  options:
-    model:                usuario
-    module:               AdministrarUsuarios
-    prefix_path:          /AdministrarUsuarios
-    column:               id
-    with_wildcard_routes: true
-
 equipo:
   class: sfDoctrineRouteCollection
   options:
