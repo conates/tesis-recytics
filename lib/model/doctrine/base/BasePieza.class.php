@@ -9,33 +9,36 @@
  * @property string $marca
  * @property boolean $estado
  * @property string $detalle
- * @property integer $usuario_id
+ * @property integer $user_id
  * @property integer $categoria_id
  * @property integer $empleado_id
  * @property integer $container_id
  * @property integer $venta_pieza_id
  * @property VentaPieza $VentaPieza
+ * @property sfGuardUser $sfGuardUser
  * 
- * @method integer    getId()             Returns the current record's "id" value
- * @method string     getMarca()          Returns the current record's "marca" value
- * @method boolean    getEstado()         Returns the current record's "estado" value
- * @method string     getDetalle()        Returns the current record's "detalle" value
- * @method integer    getUsuarioId()      Returns the current record's "usuario_id" value
- * @method integer    getCategoriaId()    Returns the current record's "categoria_id" value
- * @method integer    getEmpleadoId()     Returns the current record's "empleado_id" value
- * @method integer    getContainerId()    Returns the current record's "container_id" value
- * @method integer    getVentaPiezaId()   Returns the current record's "venta_pieza_id" value
- * @method VentaPieza getVentaPieza()     Returns the current record's "VentaPieza" value
- * @method Pieza      setId()             Sets the current record's "id" value
- * @method Pieza      setMarca()          Sets the current record's "marca" value
- * @method Pieza      setEstado()         Sets the current record's "estado" value
- * @method Pieza      setDetalle()        Sets the current record's "detalle" value
- * @method Pieza      setUsuarioId()      Sets the current record's "usuario_id" value
- * @method Pieza      setCategoriaId()    Sets the current record's "categoria_id" value
- * @method Pieza      setEmpleadoId()     Sets the current record's "empleado_id" value
- * @method Pieza      setContainerId()    Sets the current record's "container_id" value
- * @method Pieza      setVentaPiezaId()   Sets the current record's "venta_pieza_id" value
- * @method Pieza      setVentaPieza()     Sets the current record's "VentaPieza" value
+ * @method integer     getId()             Returns the current record's "id" value
+ * @method string      getMarca()          Returns the current record's "marca" value
+ * @method boolean     getEstado()         Returns the current record's "estado" value
+ * @method string      getDetalle()        Returns the current record's "detalle" value
+ * @method integer     getUserId()         Returns the current record's "user_id" value
+ * @method integer     getCategoriaId()    Returns the current record's "categoria_id" value
+ * @method integer     getEmpleadoId()     Returns the current record's "empleado_id" value
+ * @method integer     getContainerId()    Returns the current record's "container_id" value
+ * @method integer     getVentaPiezaId()   Returns the current record's "venta_pieza_id" value
+ * @method VentaPieza  getVentaPieza()     Returns the current record's "VentaPieza" value
+ * @method sfGuardUser getSfGuardUser()    Returns the current record's "sfGuardUser" value
+ * @method Pieza       setId()             Sets the current record's "id" value
+ * @method Pieza       setMarca()          Sets the current record's "marca" value
+ * @method Pieza       setEstado()         Sets the current record's "estado" value
+ * @method Pieza       setDetalle()        Sets the current record's "detalle" value
+ * @method Pieza       setUserId()         Sets the current record's "user_id" value
+ * @method Pieza       setCategoriaId()    Sets the current record's "categoria_id" value
+ * @method Pieza       setEmpleadoId()     Sets the current record's "empleado_id" value
+ * @method Pieza       setContainerId()    Sets the current record's "container_id" value
+ * @method Pieza       setVentaPiezaId()   Sets the current record's "venta_pieza_id" value
+ * @method Pieza       setVentaPieza()     Sets the current record's "VentaPieza" value
+ * @method Pieza       setSfGuardUser()    Sets the current record's "sfGuardUser" value
  * 
  * @package    tesis
  * @subpackage model
@@ -64,9 +67,13 @@ abstract class BasePieza extends sfDoctrineRecord
              'type' => 'string',
              'length' => 45,
              ));
-        $this->hasColumn('usuario_id', 'integer', 10, array(
+        $this->hasColumn('user_id', 'integer', null, array(
              'type' => 'integer',
-             'length' => 10,
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'unique' => true,
              ));
         $this->hasColumn('categoria_id', 'integer', 10, array(
              'type' => 'integer',
@@ -93,5 +100,9 @@ abstract class BasePieza extends sfDoctrineRecord
              'local' => 'venta_pieza_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
+             'foreign' => 'id'));
     }
 }

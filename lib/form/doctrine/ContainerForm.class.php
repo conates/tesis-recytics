@@ -12,5 +12,9 @@ class ContainerForm extends BaseContainerForm
 {
   public function configure()
   {
+  
+  		   
+	$this->validatorSchema['canitdad'] = 
+          new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
   }
 }

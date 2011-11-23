@@ -21,7 +21,7 @@ abstract class BaseEquipoForm extends BaseFormDoctrine
       'peso'            => new sfWidgetFormInputText(),
       'estado'          => new sfWidgetFormInputCheckbox(),
       'detalle'         => new sfWidgetFormInputText(),
-      'usuario_id'      => new sfWidgetFormInputText(),
+      'user_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
       'categoria_id'    => new sfWidgetFormInputText(),
       'empleado_id'     => new sfWidgetFormInputText(),
       'venta_equipo_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('VentaEquipo'), 'add_empty' => true)),
@@ -34,11 +34,15 @@ abstract class BaseEquipoForm extends BaseFormDoctrine
       'peso'            => new sfValidatorInteger(array('required' => false)),
       'estado'          => new sfValidatorBoolean(),
       'detalle'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'usuario_id'      => new sfValidatorInteger(array('required' => false)),
+      'user_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'required' => false)),
       'categoria_id'    => new sfValidatorInteger(array('required' => false)),
       'empleado_id'     => new sfValidatorInteger(array('required' => false)),
       'venta_equipo_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('VentaEquipo'), 'required' => false)),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'Equipo', 'column' => array('user_id')))
+    );
 
     $this->widgetSchema->setNameFormat('equipo[%s]');
 

@@ -12,5 +12,27 @@ class ClienteForm extends BaseClienteForm
 {
   public function configure()
   {
+  $this->widgetSchema['rut'] = new sfWidgetFormInputText(array("label" => "RUT"));  
+  $this->validatorSchema['rut'] = new sfValidatorRut();
+  
+  $this->validatorSchema['razon_social'] = 
+         new sfValidatorString(array('max_length' => 45));
+		 
+  $this->validatorSchema['giro'] = 
+         new sfValidatorString(array('max_length' => 45));
+		 
+  $this->validatorSchema['nombre_representante'] = 
+         new sfValidatorString(array('max_length' => 45));
+		 
+   $this->validatorSchema['direccion'] = 
+         new sfValidatorString(array('max_length' => 45));
+	
+	$this->validatorSchema['telefono_contacto'] = 
+          new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
+		 
+  
+  
+  
+  
   }
 }

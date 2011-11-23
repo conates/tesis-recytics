@@ -24,7 +24,7 @@ abstract class BaseEmpleadoFormFilter extends BaseFormFilterDoctrine
       'fecha_contrato'     => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'fecha_fin_contrato' => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'sueldo'             => new sfWidgetFormFilterInput(),
-      'nombre_usuario'     => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'user_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -39,7 +39,7 @@ abstract class BaseEmpleadoFormFilter extends BaseFormFilterDoctrine
       'fecha_contrato'     => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'fecha_fin_contrato' => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'sueldo'             => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
-      'nombre_usuario'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'user_id'            => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('sfGuardUser'), 'column' => 'id')),
     ));
 
     $this->widgetSchema->setNameFormat('empleado_filters[%s]');
@@ -71,7 +71,7 @@ abstract class BaseEmpleadoFormFilter extends BaseFormFilterDoctrine
       'fecha_contrato'     => 'Date',
       'fecha_fin_contrato' => 'Date',
       'sueldo'             => 'Number',
-      'nombre_usuario'     => 'Number',
+      'user_id'            => 'ForeignKey',
     );
   }
 }

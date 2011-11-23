@@ -12,5 +12,7 @@ class EquipoForm extends BaseEquipoForm
 {
   public function configure()
   {
+	$this->validatorSchema['peso'] = 
+          new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));  
   }
 }

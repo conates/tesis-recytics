@@ -11,11 +11,12 @@
  * @property integer $peso
  * @property boolean $estado
  * @property string $detalle
- * @property integer $usuario_id
+ * @property integer $user_id
  * @property integer $categoria_id
  * @property integer $empleado_id
  * @property integer $venta_equipo_id
  * @property VentaEquipo $VentaEquipo
+ * @property sfGuardUser $sfGuardUser
  * 
  * @method integer     getId()              Returns the current record's "id" value
  * @method string      getOrigen()          Returns the current record's "origen" value
@@ -23,22 +24,24 @@
  * @method integer     getPeso()            Returns the current record's "peso" value
  * @method boolean     getEstado()          Returns the current record's "estado" value
  * @method string      getDetalle()         Returns the current record's "detalle" value
- * @method integer     getUsuarioId()       Returns the current record's "usuario_id" value
+ * @method integer     getUserId()          Returns the current record's "user_id" value
  * @method integer     getCategoriaId()     Returns the current record's "categoria_id" value
  * @method integer     getEmpleadoId()      Returns the current record's "empleado_id" value
  * @method integer     getVentaEquipoId()   Returns the current record's "venta_equipo_id" value
  * @method VentaEquipo getVentaEquipo()     Returns the current record's "VentaEquipo" value
+ * @method sfGuardUser getSfGuardUser()     Returns the current record's "sfGuardUser" value
  * @method Equipo      setId()              Sets the current record's "id" value
  * @method Equipo      setOrigen()          Sets the current record's "origen" value
  * @method Equipo      setMarca()           Sets the current record's "marca" value
  * @method Equipo      setPeso()            Sets the current record's "peso" value
  * @method Equipo      setEstado()          Sets the current record's "estado" value
  * @method Equipo      setDetalle()         Sets the current record's "detalle" value
- * @method Equipo      setUsuarioId()       Sets the current record's "usuario_id" value
+ * @method Equipo      setUserId()          Sets the current record's "user_id" value
  * @method Equipo      setCategoriaId()     Sets the current record's "categoria_id" value
  * @method Equipo      setEmpleadoId()      Sets the current record's "empleado_id" value
  * @method Equipo      setVentaEquipoId()   Sets the current record's "venta_equipo_id" value
  * @method Equipo      setVentaEquipo()     Sets the current record's "VentaEquipo" value
+ * @method Equipo      setSfGuardUser()     Sets the current record's "sfGuardUser" value
  * 
  * @package    tesis
  * @subpackage model
@@ -77,9 +80,13 @@ abstract class BaseEquipo extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
-        $this->hasColumn('usuario_id', 'integer', 10, array(
+        $this->hasColumn('user_id', 'integer', null, array(
              'type' => 'integer',
-             'length' => 10,
+             'fixed' => 0,
+             'unsigned' => false,
+             'notnull' => false,
+             'primary' => false,
+             'unique' => true,
              ));
         $this->hasColumn('categoria_id', 'integer', 10, array(
              'type' => 'integer',
@@ -100,6 +107,10 @@ abstract class BaseEquipo extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('VentaEquipo', array(
              'local' => 'venta_equipo_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('sfGuardUser', array(
+             'local' => 'user_id',
              'foreign' => 'id'));
     }
 }

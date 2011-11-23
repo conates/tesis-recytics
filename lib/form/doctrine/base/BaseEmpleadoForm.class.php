@@ -27,7 +27,7 @@ abstract class BaseEmpleadoForm extends BaseFormDoctrine
       'fecha_contrato'     => new sfWidgetFormDateTime(),
       'fecha_fin_contrato' => new sfWidgetFormDateTime(),
       'sueldo'             => new sfWidgetFormInputText(),
-      'nombre_usuario'     => new sfWidgetFormInputText(),
+      'user_id'            => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
@@ -43,11 +43,14 @@ abstract class BaseEmpleadoForm extends BaseFormDoctrine
       'fecha_contrato'     => new sfValidatorDateTime(),
       'fecha_fin_contrato' => new sfValidatorDateTime(),
       'sueldo'             => new sfValidatorInteger(array('required' => false)),
-      'nombre_usuario'     => new sfValidatorInteger(),
+      'user_id'            => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'Empleado', 'column' => array('email')))
+      new sfValidatorAnd(array(
+        new sfValidatorDoctrineUnique(array('model' => 'Empleado', 'column' => array('email'))),
+        new sfValidatorDoctrineUnique(array('model' => 'Empleado', 'column' => array('user_id'))),
+      ))
     );
 
     $this->widgetSchema->setNameFormat('empleado[%s]');

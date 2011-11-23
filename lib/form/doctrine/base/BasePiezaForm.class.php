@@ -19,7 +19,7 @@ abstract class BasePiezaForm extends BaseFormDoctrine
       'marca'          => new sfWidgetFormInputText(),
       'estado'         => new sfWidgetFormInputCheckbox(),
       'detalle'        => new sfWidgetFormInputText(),
-      'usuario_id'     => new sfWidgetFormInputText(),
+      'user_id'        => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
       'categoria_id'   => new sfWidgetFormInputText(),
       'empleado_id'    => new sfWidgetFormInputText(),
       'container_id'   => new sfWidgetFormInputText(),
@@ -31,12 +31,16 @@ abstract class BasePiezaForm extends BaseFormDoctrine
       'marca'          => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'estado'         => new sfValidatorBoolean(array('required' => false)),
       'detalle'        => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'usuario_id'     => new sfValidatorInteger(array('required' => false)),
+      'user_id'        => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'required' => false)),
       'categoria_id'   => new sfValidatorInteger(array('required' => false)),
       'empleado_id'    => new sfValidatorInteger(array('required' => false)),
       'container_id'   => new sfValidatorInteger(array('required' => false)),
       'venta_pieza_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('VentaPieza'), 'required' => false)),
     ));
+
+    $this->validatorSchema->setPostValidator(
+      new sfValidatorDoctrineUnique(array('model' => 'Pieza', 'column' => array('user_id')))
+    );
 
     $this->widgetSchema->setNameFormat('pieza[%s]');
 
