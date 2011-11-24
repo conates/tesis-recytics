@@ -1,3 +1,0 @@
-<td colspan="10">
-  <?php echo __('%%id%% - %%origen%% - %%marca%% - %%peso%% - %%estado%% - %%detalle%% - %%user_id%% - %%categoria_id%% - %%empleado_id%% - %%venta_equipo_id%%', array('%%id%%' => link_to($equipo->getId(), 'equipo_edit', $equipo), '%%origen%%' => $equipo->getOrigen(), '%%marca%%' => $equipo->getMarca(), '%%peso%%' => $equipo->getPeso(), '%%estado%%' => get_partial('AdministrarEquipos/list_field_boolean', array('value' => $equipo->getEstado())), '%%detalle%%' => $equipo->getDetalle(), '%%user_id%%' => $equipo->getUserId(), '%%categoria_id%%' => $equipo->getCategoriaId(), '%%empleado_id%%' => $equipo->getEmpleadoId(), '%%venta_equipo_id%%' => $equipo->getVentaEquipoId()), 'messages') ?>
-</td>
