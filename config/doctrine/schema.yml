@@ -48,6 +48,17 @@ sfGuardUser:
       foreign: user_id
       type: one
 
+Usuario:
+  columns:
+    id: 						{ type: integer(10), primary: true, notnull: true, autoincrement: true }
+    rut:						{ type: string(10), notnull: true }
+    nombres:					{ type: string(45), notnull: true }
+    apellidos:					{ type: string(45), notnull: true }
+    email:						{ type: string(45), notnull: true,unique: true }
+    fecha_nac:					{ type: date }
+    direccion:					{ type: string(45) }
+    ciudad:						{ type: string(45) }
+    telefono:					{ type: integer(10), notnull: true }
 Equipo:
   columns:
    id:         					{ type: integer(10), primary: true, notnull: true, autoincrement: true }
@@ -72,7 +83,7 @@ Equipo:
 VentaEquipo:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    fecha:     					{ type: timestamp, notnull:true }
+    fecha:     					{ type: date,}
     tipo:       				{ type: string(45), notnull:true }
     monto:      				{ type: integer(10), notnull:true }
     detalle:    				{ type: string(255) }
@@ -129,7 +140,7 @@ Empleado:
 VentaPieza:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    fecha:     					{ type: timestamp, notnull:true }
+    fecha:     					{ type: date, notnull:true }
     tipo:       				{ type: string(45), notnull:true }
     monto:     					{ type: integer(10), notnull:true }
     detalle:    				{ type: string(255) }
