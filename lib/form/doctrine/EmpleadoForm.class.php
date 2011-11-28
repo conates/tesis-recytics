@@ -12,18 +12,11 @@ class EmpleadoForm extends BaseEmpleadoForm
 {
   public function configure()
   {
-  $this->widgetSchema['rut'] = new sfWidgetFormInputText(array("label" => "RUT"));
-  
-  $this->validatorSchema['rut'] = new sfValidatorRut();
-  
   $this->validatorSchema['nombres'] = 
          new sfValidatorString(array('max_length' => 40));
 		 
   $this->validatorSchema['apellidos'] = 
          new sfValidatorString(array('max_length' => 40));
-		 
-  $this->validatorSchema['email'] = 
-         new sfValidatorEmail(array(), array('invalid' => 'La Direccion no es valida.(debe ser xxx@ccc.com)'));
 		 
   $this->validatorSchema['telefono'] = 
   new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
@@ -37,8 +30,6 @@ class EmpleadoForm extends BaseEmpleadoForm
    $format1 = '%day%/%month%/%year%'; 
    $this->widgetSchema['fecha_nac'] = 
            new sfWidgetFormDate(array('format' => $format1,'years' => $years1));
-   
-   
    
    $range  = range(date('Y'), date('Y')+5);
    $years = array_combine($range,$range);
