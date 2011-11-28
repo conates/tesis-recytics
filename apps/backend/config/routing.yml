@@ -1,3 +1,12 @@
+usuario:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                usuario
+    module:               AdministrarUsuarios
+    prefix_path:          /AdministrarUsuarios
+    column:               id
+    with_wildcard_routes: true
+
 container:
   class: sfDoctrineRouteCollection
   options:
