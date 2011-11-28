@@ -47,7 +47,15 @@ sfGuardUser:
       local: id
       foreign: user_id
       type: one
-
+    Usuario:
+      local: id
+      foreign: user_id
+      type: one
+    Clientes:
+      local: id
+      foreign: user_id
+      type: one
+	
 Usuario:
   columns:
     id: 						{ type: integer(10), primary: true, notnull: true, autoincrement: true }
@@ -58,7 +66,14 @@ Usuario:
     fecha_nac:					{ type: date }
     direccion:					{ type: string(45) }
     ciudad:						{ type: string(45) }
-    telefono:					{ type: integer(10), notnull: true }
+    user_id:					{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
+  relations: 	
+    sfGuardUser:
+     local: user_id
+     foreign: id
+     type: one
+	
+	
 Equipo:
   columns:
    id:         					{ type: integer(10), primary: true, notnull: true, autoincrement: true }
