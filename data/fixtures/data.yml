@@ -44,10 +44,10 @@ sfGuardUser:
     email_address: admin
     username: admin
     algorithm: sha1
-    salt: 20591b794715570b434081763eb8307b
-    password: a12596ab82e1075e852d5c409654bdf6fe7ee168
+    salt: admin
+    password: admin
     is_active: true
-    is_super_admin: false
+    is_super_admin: true
     last_login: '2011-11-27 19:31:40'
     created_at: '2011-11-23 21:58:03'
     updated_at: '2011-11-27 19:31:40'
@@ -57,8 +57,8 @@ sfGuardUser:
     email_address: donante@donante
     username: donante
     algorithm: sha1
-    salt: ad34f0a6807160caf9e2e5ae47dd1c30
-    password: 05aacf2f1c40d5ffa486f1ec4db46f1f66c29e24
+    salt: donante
+    password: donante
     is_active: true
     is_super_admin: false
     last_login: null
@@ -70,8 +70,8 @@ sfGuardUser:
     email_address: empleado@empleado
     username: empleado
     algorithm: sha1
-    salt: 02a2475a848ce7d8f2e994c693cc06fe
-    password: 2ec36d2e6113196135f7ca321c2c531b5bcd7a3c
+    salt: empleado
+    password: empleado
     is_active: true
     is_super_admin: false
     last_login: null
@@ -81,7 +81,7 @@ Empleado:
   Empleado_2:
     rut: 16166807-9
     nombres: claudio
-    apellidos: oñate
+    apellidos: onate
     email: conates@gmail.com
     fecha_nac: '1986-01-11 00:00:00'
     direccion: 'santiago santa isabel'
