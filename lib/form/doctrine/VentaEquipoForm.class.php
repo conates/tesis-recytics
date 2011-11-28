@@ -16,9 +16,13 @@ class VentaEquipoForm extends BaseVentaEquipoForm
    $years = array_combine($range,$range);
    $format = '%day%/%month%/%year%'; 
    
-   $this->widgetSchema['fecha'] = 
-           new sfWidgetFormDate(array('format' => $format,'years' => $years));
-  
+   //$this->widgetSchema['fecha'] = 
+			//new sfWidgetFormDate(array('format' => $format,'years' => $years));
+
+	$this->widgetSchema['fecha'] = new sfWidgetFormJQueryDate(array(
+                    'culture' => 'es',
+                    'image' => '/images/calendar.gif'
+                ));
   
   $this->validatorSchema['Monto'] = 
           new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
