@@ -16,5 +16,12 @@ class UsuarioForm extends BaseUsuarioForm
                     'culture' => 'es',
                     'image' => '/images/calendar.gif'
                 ));
+				
+	$this->validatorSchema['email'] = new sfValidatorAnd(array(
+                    $this->validatorSchema['email'],
+                    new sfValidatorEmail(),
+                ));
+				
+    $this->validatorSchema['rut']= new sfValidatorRut();
   }
 }
