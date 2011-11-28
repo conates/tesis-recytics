@@ -55,7 +55,7 @@ sfGuardUser:
       local: id
       foreign: user_id
       type: one
-	
+
 Usuario:
   columns:
     id: 						{ type: integer(10), primary: true, notnull: true, autoincrement: true }
@@ -67,13 +67,12 @@ Usuario:
     direccion:					{ type: string(45) }
     ciudad:						{ type: string(45) }
     user_id:					{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
-  relations: 	
+  relations:
     sfGuardUser:
-     local: user_id
-     foreign: id
-     type: one
-	
-	
+      local: user_id
+      foreign: id
+      type: one
+
 Equipo:
   columns:
    id:         					{ type: integer(10), primary: true, notnull: true, autoincrement: true }
