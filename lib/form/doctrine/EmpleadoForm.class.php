@@ -44,10 +44,20 @@ class EmpleadoForm extends BaseEmpleadoForm
    $years = array_combine($range,$range);
    $format = '%day%/%month%/%year%'; 
    
-   $this->widgetSchema['fecha_contrato'] = 
-           new sfWidgetFormDate(array('format' => $format,'years' => $years));
-   $this->widgetSchema['fecha_fin_contrato'] = 
-           new sfWidgetFormDate(array('format' => $format,'years' => $years));
+   $this->widgetSchema['fecha_contrato'] = new sfWidgetFormJQueryDate(array(
+                    'culture' => 'es',
+                    'image' => '/images/calendar.gif'
+                ));
+	$this->widgetSchema['fecha_fin_contrato'] = new sfWidgetFormJQueryDate(array(
+                    'culture' => 'es',
+                    'image' => '/images/calendar.gif'
+                ));
+   
+   //$this->widgetSchema['fecha_contrato'] = 
+           //new sfWidgetFormDate(array('format' => $format,'years' => $years));
+   
+   //$this->widgetSchema['fecha_fin_contrato'] = 
+          // new sfWidgetFormDate(array('format' => $format,'years' => $years));
       
    $this->validatorSchema->setPostValidator(new sfValidatorSchemaCompare('fecha_contrato', '<', 'fecha_fin_contrato'));
   
