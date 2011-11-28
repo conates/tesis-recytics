@@ -52,6 +52,10 @@ class EmpleadoForm extends BaseEmpleadoForm
                     'culture' => 'es',
                     'image' => '/images/calendar.gif'
                 ));
+	$this->widgetSchema['fecha_nac'] = new sfWidgetFormJQueryDate(array(
+                    'culture' => 'es',
+                    'image' => '/images/calendar.gif'
+                ));
    
    //$this->widgetSchema['fecha_contrato'] = 
            //new sfWidgetFormDate(array('format' => $format,'years' => $years));
