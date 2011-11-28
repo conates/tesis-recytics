@@ -3,7 +3,7 @@
         <ul>
             <li><?php echo link_to('Empleados', '@empleado') ?></li>
             <li><?php echo link_to('Usuario', '@sf_guard_user') ?></li>
-            <li><?php echo link_to('Donandte', '@usuario') ?></li>
+            <li><?php echo link_to('Donante', '@usuario') ?></li>
             <li><?php echo link_to('Cliente', '@cliente') ?></li>
         </ul>
     </li>
