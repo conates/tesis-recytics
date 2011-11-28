@@ -1,0 +1,105 @@
+Equipo:
+  Equipo_1:
+    origen: notebook
+    marca: hp
+    peso: '56321'
+    estado: true
+    detalle: 'equipo en buen estado'
+    sfGuardUser: sfGuardUser_3
+    categoria_id: null
+    empleado_id: '1'
+Cliente:
+  Cliente_1:
+    rut: 11111111-1
+    razon_social: Replacas
+    giro: recicladora
+    nombre_representante: 'Juan Placa'
+    direccion: 'las placas 11'
+    telefono_contacto: '9568744'
+  Cliente_2:
+    rut: 11111111-1
+    razon_social: memo
+    giro: recicladora
+    nombre_representante: 'memo bustamante'
+    direccion: 'las memo 22'
+    telefono_contacto: '7894455'
+  Cliente_3:
+    rut: 11111111-1
+    razon_social: gabinetes
+    giro: chatarra
+    nombre_representante: 'chat gab'
+    direccion: 'los gabinetes'
+    telefono_contacto: '789456332'
+  Cliente_4:
+    rut: 17076027-1
+    razon_social: chatarra
+    giro: chatarra
+    nombre_representante: chatarra
+    direccion: 'las chatarras'
+    telefono_contacto: '1236547'
+sfGuardUser:
+  sfGuardUser_1:
+    first_name: null
+    last_name: null
+    email_address: admin
+    username: admin
+    algorithm: sha1
+    salt: 20591b794715570b434081763eb8307b
+    password: a12596ab82e1075e852d5c409654bdf6fe7ee168
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-11-27 19:31:40'
+    created_at: '2011-11-23 21:58:03'
+    updated_at: '2011-11-27 19:31:40'
+  sfGuardUser_2:
+    first_name: donante
+    last_name: donante
+    email_address: donante@donante
+    username: donante
+    algorithm: sha1
+    salt: ad34f0a6807160caf9e2e5ae47dd1c30
+    password: 05aacf2f1c40d5ffa486f1ec4db46f1f66c29e24
+    is_active: true
+    is_super_admin: false
+    last_login: null
+    created_at: '2011-11-25 14:22:10'
+    updated_at: '2011-11-25 14:24:22'
+  sfGuardUser_3:
+    first_name: empleado
+    last_name: empleado
+    email_address: empleado@empleado
+    username: empleado
+    algorithm: sha1
+    salt: 02a2475a848ce7d8f2e994c693cc06fe
+    password: 2ec36d2e6113196135f7ca321c2c531b5bcd7a3c
+    is_active: true
+    is_super_admin: false
+    last_login: null
+    created_at: '2011-11-25 14:29:14'
+    updated_at: '2011-11-25 14:29:14'
+Empleado:
+  Empleado_2:
+    rut: 16166807-9
+    nombres: claudio
+    apellidos: oñate
+    email: conates@gmail.com
+    fecha_nac: '1986-01-11 00:00:00'
+    direccion: 'santiago santa isabel'
+    ciudad_residencia: santiago
+    telefono: '75564195'
+    fecha_contrato: '2012-01-19 00:00:00'
+    fecha_fin_contrato: '2013-12-19 00:00:00'
+    sueldo: '1000000'
+  Empleado_3:
+    rut: 16230019-9
+    nombres: caro
+    apellidos: acevedo
+    email: lcaj21@gmail.com
+    fecha_nac: '1992-01-20 00:00:00'
+    direccion: 'santiago santa isabel'
+    ciudad_residencia: santiago
+    telefono: '75564195'
+    fecha_contrato: '2011-02-19 00:00:00'
+    fecha_fin_contrato: '2012-04-18 00:00:00'
+    sueldo: '1000000'
+    sfGuardUser: sfGuardUser_3
