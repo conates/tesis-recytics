@@ -16,14 +16,19 @@ class VentaPiezaForm extends BaseVentaPiezaForm
    $years = array_combine($range,$range);
    $format = '%day%/%month%/%year%'; 
    
-   $this->widgetSchema['fecha'] = 
-           new sfWidgetFormDate(array('format' => $format,'years' => $years));
+   //$this->widgetSchema['fecha'] = 
+           //new sfWidgetFormDate(array('format' => $format,'years' => $years));
 		   
 	$this->validatorSchema['Monto'] = 
           new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
 
     $this->validatorSchema['gastos_envio'] = 
-          new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));		  
+          new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));	
+
+	$this->widgetSchema['fecha'] = new sfWidgetFormJQueryDate(array(
+                    'culture' => 'es',
+                    'image' => '/images/calendar.gif'
+                ));
 	
   }
 }
