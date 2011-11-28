@@ -12,9 +12,8 @@ class ClienteForm extends BaseClienteForm
 {
   public function configure()
   {
-  $this->widgetSchema['rut'] = new sfWidgetFormInputText(array("label" => "RUT"));  
-  $this->validatorSchema['rut'] = new sfValidatorRut();
-  
+  //$this->widgetSchema['rut'] = new sfWidgetFormInputText(array("label" => "RUT"));  
+    
   $this->validatorSchema['razon_social'] = 
          new sfValidatorString(array('max_length' => 45));
 		 
@@ -30,7 +29,8 @@ class ClienteForm extends BaseClienteForm
 	$this->validatorSchema['telefono_contacto'] = 
           new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
 		 
-  
+	
+    $this->validatorSchema['rut']= new sfValidatorRut();
   
   
   
