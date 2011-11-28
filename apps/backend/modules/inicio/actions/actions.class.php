@@ -1,25 +1,17 @@
 <?php
 
-/*
- * This file is part of the symfony package.
- * (c) 2004-2006 Fabien Potencier <fabien.potencier@symfony-project.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
-//require_once(dirname(__FILE__).'/../lib/BasesfGuardAuthActions.class.php');
-
 /**
+ * inicio actions.
  *
- * @package    symfony
- * @subpackage plugin
- * @author     Fabien Potencier <fabien.potencier@symfony-project.com>
- * @version    SVN: $Id: actions.class.php 23319 2009-10-25 12:22:23Z Kris.Wallsmith $
+ * @package    tesis
+ * @subpackage inicio
+ * @author     Your name here
+ * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class homeActions extends sfActions
+class inicioActions extends sfActions
 {
-	public function executeIndex (sfWebRequest $request){
-	
-	}
+  public function executeIndex(sfWebRequest $request)
+  {
+  }
+
 }
