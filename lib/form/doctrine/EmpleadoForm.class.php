@@ -56,6 +56,13 @@ class EmpleadoForm extends BaseEmpleadoForm
                     'culture' => 'es',
                     'image' => '/images/calendar.gif'
                 ));
+	
+	$this->validatorSchema['email'] = new sfValidatorAnd(array(
+                    $this->validatorSchema['email'],
+                    new sfValidatorEmail(),
+                ));
+				
+    $this->validatorSchema['rut']= new sfValidatorRut();
    
    //$this->widgetSchema['fecha_contrato'] = 
            //new sfWidgetFormDate(array('format' => $format,'years' => $years));
