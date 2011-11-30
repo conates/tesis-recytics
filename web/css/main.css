@@ -440,3 +440,39 @@ em
 #jsddm li ul li a:hover{	
     background: #8EA344;
 }
+#inicio {
+    height: 600px;
+    margin: 0 auto;
+    width: 970px;
+}
+.dash{
+    background: none repeat scroll 0 0 #324143;
+    box-shadow: 10px 10px 5px #777777;
+    float: left;
+    height: 150px;
+    margin: 20px;
+    padding: 5px 12px;
+    width: 150px;
+}
+.dash span{
+    color: #111111;
+    font: 22px Arial,Helvetica,sans-serif;
+    text-shadow: 0 1px 10px #CCCCCC;
+}
+.dash ul li{
+    left: -30px;
+    line-height: 25px;
+    list-style: none outside none;
+    position: relative;
+    width: 140px;
+}
+.dash ul li a{
+    color: #999999;
+    font-weight: bold;
+    text-decoration: none;
+}
+.dash ul li a:hover{
+    color: #009900;
+    font-weight: bold;
+    text-decoration: none;
+}

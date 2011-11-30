@@ -1,22 +1,50 @@
-<ul id="inicio">
-    <li><a href="#">Usuarios</a>
+<div id="inicio">
+    <div class="dash">
+        <span>Usuarios</span>
         <ul>
-            <li><?php echo link_to('Empleados', '@empleado') ?></li>
-            <li><?php echo link_to('Usuario', '@sf_guard_user') ?></li>
-            <li><?php echo link_to('Donante', '@usuario') ?></li>
-            <li><?php echo link_to('Cliente', '@cliente') ?></li>
+            <li><a href="/AdministrarEmpleados">Empleados</a></li>
+            <li><a href="/guard/users">Usuario</a></li>
+            <li><a href="/AdministrarUsuarios">Donante</a></li>
+            <li><a href="/AdministrarClientes">Cliente</a></li>
         </ul>
-    </li>
-    <li><a href="#">Ventas</a>
+    </div>
+    <div class="dash">
+        <span>Ventas</span>
         <ul>
-            <li><?php echo link_to('Venta de Equipos', '@ventaequipo') ?></li>
-            <li><?php echo link_to('Venta de Piezas', '@ventapieza') ?></li>
-            <li><?php echo link_to('Venta de Chatarra', '@ventachatarra') ?></li>
+            <li><a href="/AdministrarVentaEquipo">Venta de Equipos</a></li>
+            <li><a href="/AdministrarVentaPieza">Venta de Piezas</a></li>
+            <li><a href="/AdministrarVentaChatarra">Venta de Chatarra</a></li>
         </ul>
-    </li>
-    <li><?php echo link_to('Piezas', '@pieza') ?></li>
-    <li><?php echo link_to('Container', '@container') ?></li>
-    <li><?php echo link_to('Equipo', '@equipo') ?></li>
-    <li><?php echo link_to('Categorias', '@categoria') ?></li>
-    <li><?php echo link_to('Salir', '@sf_guard_signout') ?></li>
-</ul>
+    </div>
+    <div class="dash">
+        <span>Piezas</span>
+        <ul>
+            <li><a href="/AdministrarPiezas">Piezas</a></li>
+        </ul>
+    </div>
+    <div class="dash">
+        <span>Container</span>
+        <ul>
+            <li><a href="/AdministrarContenedor">Container</a></li>
+        </ul>
+    </div>
+    <div class="dash">
+        <span>Container</span>
+        <ul>
+            <li><a href="/AdministrarEquipos">Equipo</a></li>
+        </ul>
+    </div>
+    <div class="dash">
+        <span>Categorias</span>
+        <ul>
+            <li><a href="/AdministrarCategorias">Categorias</a></li>
+        </ul>
+    </div>
+    <div class="dash">
+       <span>Salir</span>
+        <ul>
+            <li><a href="/Salir">Salir</a></li>
+        </ul>
+    </div>
+</div>
+ 
