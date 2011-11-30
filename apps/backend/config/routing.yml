@@ -107,7 +107,7 @@ sf_guard_password:
   param: { module: sfGuardAuth, action: password }
 # apps/backend/config/routing.yml
 homepage:
- url:   /
+ url:   /dashboard
  param: { module: inicio, action: index }
 
 # generic rules
