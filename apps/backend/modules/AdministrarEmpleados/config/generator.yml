@@ -13,9 +13,34 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        rut:                  { label: Rut}
+        nombres:              { label: Nombres}
+        apellidos:            { label: Apellidos }
+        email:                { label: Email}
+        fecha_nac:            { label: Fecha de Nacimiento}
+        direccion:            { label: Dirección }
+        ciudad_resirencia:    { label: Ciudad de Residencia}
+        telefono:             { label: Teléfono}
+        fecha_contrato:       { label: Fecha Contrato }
+        fecha_fin_contrato:   { label: Fecha Fin Contrato}
+        sueldo:               { label: Sueldo}
+        user_id:              { label: Usuario }
+      list:    
+       title: Lista de Empleados
+      filter:  
+       display: [rut]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:   
+       title: Editar Empleado
+       display:
+          "Datos Personales": [rut, nombres, apellidos, email, fecha_nac, direccion, ciudad_residencia, telefono, fecha_contrato, fecha_fin_contrato, sueldo]
+      new:    
+       title: Ingresar Empleado
+       display:
+          "Datos Personales": [rut, nombres, apellidos, email, fecha_nac, direccion, ciudad_residencia, telefono, fecha_contrato, fecha_fin_contrato, sueldo, user_id]
+      show :
+          title: Revisar Empleado
+          display:
+            "Datos Personales": [rut, nombres, apellidos, email, fecha_nac, direccion, ciudad_residencia, telefono, fecha_contrato, fecha_fin_contrato, sueldo, user_id]
+

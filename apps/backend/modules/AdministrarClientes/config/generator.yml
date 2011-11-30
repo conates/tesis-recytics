@@ -13,9 +13,29 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        rut:                { label: Rut}
+        razon_social:       { label: Razón Social}
+        giro:               { label: Giro }
+        nombre_representante:  { label: Nombre Representante }
+        direccion:          { label: Dirección }
+        telefono_contacto:  { label: Teléfono de Contacto }
+      list:    
+        title: Listado de Clientes
+        sort:          [rut, asc]
+      filter:  
+       display: [rut,giro]
+
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:       
+         title: Editar Cliente %%razon_social%% 
+         display:
+          "Datos Clientes": [rut,razon_social,giro,nombre_representante,direccion,telefono_contacto]
+      new:     
+       title: Ingresar Cliente 
+       display:
+         "Datos clientes": [rut,razon_social,giro,nombre_representante,direccion,telefono_contacto]
+      show:
+        title: Revisar Cliente
+        display:
+          "Datos clientes": [rut,razon_social,giro,nombre_representante,direccion,telefono_contacto]

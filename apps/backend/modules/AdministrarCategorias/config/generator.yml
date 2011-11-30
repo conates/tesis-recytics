@@ -15,9 +15,25 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        nombre_categoria:       { label: Nombre}
+        descripcion:            { label: Descripción}
+        tipo:                   { label: Tipo}
+      list:    
+        title: Lista de Categorías
+        sort:          [nombre_categoria, asc]
+      filter:  
+       display: [nombre_categoria]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+         title: Editar Categoria %%nombre_categoria%% 
+         display:
+          "Datos Categorias": [nombre_categoria, descripcion,tipo]
+      new:     
+          title: Ingresar Categoria 
+          display:
+           "Datos Categorias": [nombre_categoria, descripcion,tipo]
+      show :
+          title: Revisar Categoria
+          display:
+            "Datos Categorias": [nombre_categoria, descripcion,tipo]

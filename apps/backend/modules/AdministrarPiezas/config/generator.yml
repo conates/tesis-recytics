@@ -13,9 +13,24 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        marca:                   { label: Marca}
+        estado:                  { label: Estado}
+        detalle:                 { label: Detalle }
+        user_id:                 { label: Usuario}
+        categoria_id:            { label: Categoría}
+        empleado_id:             { label: Empleado }
+        container_id:            { label: Container }
+        venta_pieza_id:          { label: Venta de Pieza }
+      list:   
+        title: Lista de Piezas
+      filter:  
+        display: [marca, categoria_id]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+       title: Editar pieza %%marca%%
+      new:
+        title: Ingresar Nueva Pieza
+      show: 
+        title: Revisar Piezas
+

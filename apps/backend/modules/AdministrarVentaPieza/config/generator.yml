@@ -13,9 +13,21 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        fecha:                   { label: Fecha}
+        tipo:                    { label: Tipo}
+        monto:                   { label: Monto }
+        detalle:                 { label: Detalle}
+        cliente:                 { label: Cliente}
+        gasto_envio:             { label: Gastos de Envío }
+      list:   
+        title: Lista de Ventas
+      filter:  
+        display: [tipo, fecha]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+       title: Editar venta %%id%%
+      new:
+        title: Ingresar Nueva venta
+      show: 
+        title: Revisar Venta

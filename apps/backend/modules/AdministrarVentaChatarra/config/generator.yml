@@ -13,9 +13,21 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        monto:                  { label: Monto}
+        fecha:                  { label: Fecha}
+        detalle:                { label: Detalle }
+        tipo:                   { label: Tipo}
+        cliente_id:             { label: Cliente}
+
+      list:   
+        title: Ventas de Chatarra
+      filter:  
+        display: [cliente_id, fecha]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+       title: Editar venta de chatarra %%id%%
+      new:
+        title: Ingresar Nueva Venta
+      show: 
+        title: Revisar Venta

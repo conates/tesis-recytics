@@ -13,9 +13,25 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        capacidad:                { label: Capacidad}
+        tipo:                     { label: Tipo}
+        venta_chatarra_id:        { label: Venta de Chatarra }
+
+      list:    
+        title: Lista de Contenedores
+      filter:  
+       display: [tipo]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+        title: Editar Contenedor %%id%%
+        display:
+          "Datos Contenedor": [capacidad,tipo]
+      new:
+        title: Ingresar Contenedor
+        display:
+          "Datos Contenedor": [capacidad, tipo,venta_chatarra_id]
+      show:
+        title: Revisar Contenedor
+        display:
+          "Datos Contenedor": [capacidad, tipo,venta_chatarra_id]

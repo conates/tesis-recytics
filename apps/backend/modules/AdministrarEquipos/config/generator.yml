@@ -13,9 +13,31 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        origen:                   { label: Origen}
+        marca:                    { label: Marca}
+        peso:                     { label: Peso }
+        estado:                   { label: Estado}
+        detalle:                  { label: Detalle}
+        user_id:                  { label: Usuario }
+        categoria_id:             { label: Categoría}
+        empleado_id:              { label: Empleado}
+        venta_equipo_id:          { label: Venta de Equipo }
+      list:    
+       title: Lista de Equipos
+      filter:  
+       display: [estado,marca]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:   
+       title: Editar Equipo %%marca%%
+       display:
+         "Datos equipo": [id ,origen, marca, peso, estado, detalle, user_id, categoria_id, empleado_id, venta_equipo_id] 
+      new:
+       title: Ingresar Nuevo Equipo 
+       display:
+         "Datos equipo": [id ,origen, marca, peso, estado, detalle, user_id, categoria_id, empleado_id, venta_equipo_id] 
+      show:
+       title: Revisar Equipo
+       display:
+          "Datos equipo": [id ,origen, marca, peso, estado, detalle, user_id, categoria_id, empleado_id, venta_equipo_id] 
+ 
