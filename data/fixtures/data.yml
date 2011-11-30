@@ -3,11 +3,10 @@ Equipo:
     origen: notebook
     marca: hp
     peso: '56321'
-    estado: true
+    estado: '1'
     detalle: 'equipo en buen estado'
     sfGuardUser: sfGuardUser_3
-    categoria_id: null
-    empleado_id: '1'
+    Empleado: Empleado_1
 Cliente:
   Cliente_1:
     rut: 11111111-1
@@ -37,6 +36,22 @@ Cliente:
     nombre_representante: chatarra
     direccion: 'las chatarras'
     telefono_contacto: '1236547'
+sfGuardUserPermission:
+  sfGuardUserPermission_1_3:
+    User: sfGuardUser_1
+    Permission: sfGuardPermission_3
+    created_at: '2011-11-29 22:47:23'
+    updated_at: '2011-11-29 22:47:23'
+  sfGuardUserPermission_2_2:
+    User: sfGuardUser_2
+    Permission: sfGuardPermission_2
+    created_at: '2011-11-29 22:47:06'
+    updated_at: '2011-11-29 22:47:06'
+  sfGuardUserPermission_3_1:
+    User: sfGuardUser_3
+    Permission: sfGuardPermission_1
+    created_at: '2011-11-29 22:46:38'
+    updated_at: '2011-11-29 22:46:38'
 sfGuardUser:
   sfGuardUser_1:
     first_name: null
@@ -45,12 +60,12 @@ sfGuardUser:
     username: admin
     algorithm: sha1
     salt: admin
-    password: admin
+    password: dd94709528bb1c83d08f3088d4043f4742891f4f
     is_active: true
     is_super_admin: true
-    last_login: '2011-11-27 19:31:40'
+    last_login: '2011-11-29 23:19:52'
     created_at: '2011-11-23 21:58:03'
-    updated_at: '2011-11-27 19:31:40'
+    updated_at: '2011-11-29 23:19:52'
   sfGuardUser_2:
     first_name: donante
     last_name: donante
@@ -58,7 +73,7 @@ sfGuardUser:
     username: donante
     algorithm: sha1
     salt: donante
-    password: donante
+    password: d251c4383e2bd2742501af8b1a58bd540627f240
     is_active: true
     is_super_admin: false
     last_login: null
@@ -71,14 +86,30 @@ sfGuardUser:
     username: empleado
     algorithm: sha1
     salt: empleado
-    password: empleado
+    password: 359f903ca0b6a4516aee5e04ce30d3a53d4348aa
     is_active: true
     is_super_admin: false
-    last_login: null
+    last_login: '2011-11-29 23:26:10'
     created_at: '2011-11-25 14:29:14'
-    updated_at: '2011-11-25 14:29:14'
+    updated_at: '2011-11-29 23:26:10'
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: empleado
+    description: 'solo el empleado tiene acceso a la app'
+    created_at: '2011-11-29 22:46:38'
+    updated_at: '2011-11-29 22:46:38'
+  sfGuardPermission_2:
+    name: donante
+    description: 'solo el usuario donante tiene acceso a la app'
+    created_at: '2011-11-29 22:47:06'
+    updated_at: '2011-11-29 22:47:06'
+  sfGuardPermission_3:
+    name: admin
+    description: 'administrador de la app'
+    created_at: '2011-11-29 22:47:23'
+    updated_at: '2011-11-29 22:47:23'
 Empleado:
-  Empleado_2:
+  Empleado_1:
     rut: 16166807-9
     nombres: claudio
     apellidos: onate
@@ -90,7 +121,7 @@ Empleado:
     fecha_contrato: '2012-01-19 00:00:00'
     fecha_fin_contrato: '2013-12-19 00:00:00'
     sueldo: '1000000'
-  Empleado_3:
+  Empleado_2:
     rut: 16230019-9
     nombres: caro
     apellidos: acevedo
