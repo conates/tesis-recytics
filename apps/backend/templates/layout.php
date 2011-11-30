@@ -47,7 +47,9 @@
         </div>
         <div id="container">
             <?php if ($sf_user->isAuthenticated()) { ?>
-                <div id="menu"><?php echo include_partial('global/menu'); ?></div>
+                <?php if ($sf_context->getModuleName()!="inicio") { ?>
+                    <div id="menu"><?php echo include_partial('global/menu'); ?></div>
+                <?php } ?> 
             <?php } ?>
 
 
