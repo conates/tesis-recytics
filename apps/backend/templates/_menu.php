@@ -1,4 +1,6 @@
 <ul id="jsddm">
+    <li><?php echo link_to('Home', '@inicio') ?>
+    </li>
     <li><a href="#">Usuarios</a>
         <ul>
             <li><?php echo link_to('Empleados', '@empleado') ?></li>
