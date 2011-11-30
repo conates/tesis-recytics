@@ -60,7 +60,7 @@ sfGuardUser:
     username: admin
     algorithm: sha1
     salt: admin
-    password: dd94709528bb1c83d08f3088d4043f4742891f4f
+    password: admin
     is_active: true
     is_super_admin: true
     last_login: '2011-11-29 23:19:52'
@@ -73,7 +73,7 @@ sfGuardUser:
     username: donante
     algorithm: sha1
     salt: donante
-    password: d251c4383e2bd2742501af8b1a58bd540627f240
+    password: donante
     is_active: true
     is_super_admin: false
     last_login: null
@@ -86,7 +86,7 @@ sfGuardUser:
     username: empleado
     algorithm: sha1
     salt: empleado
-    password: 359f903ca0b6a4516aee5e04ce30d3a53d4348aa
+    password: empleado
     is_active: true
     is_super_admin: false
     last_login: '2011-11-29 23:26:10'
