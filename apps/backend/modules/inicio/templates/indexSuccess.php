@@ -43,7 +43,7 @@
     <div class="dash">
        <span>Salir</span>
         <ul>
-            <li><a href="/Salir">Salir</a></li>
+            <li><a href="/logout">Salir</a></li>
         </ul>
     </div>
 </div>
