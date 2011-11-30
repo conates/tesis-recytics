@@ -107,7 +107,7 @@ Categoria:
   columns:
    id:               			{ type: integer(10), primary: true, notnull: true, autoincrement: true }
    nombre_categoria: 			{ type: enum, values: ['MB', 'HDD', 'MEM', 'PANT', 'CPU', 'TEC', 'MOU', 'BAT'] }
-   descripcion:    				{ type: string(45), notnull:true } 
+   descripcion:    				{ type: string(500), notnull:true } 
    tipo:             			{ type: enum, values: ['Pieza', 'Equipo'] }
 
 Pieza:
