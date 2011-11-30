@@ -64,6 +64,7 @@ Usuario:
     apellidos:					{ type: string(45), notnull: true }
     email:						{ type: string(45), notnull: true,unique: true }
     fecha_nac:					{ type: date }
+    telefono:          			{ type: integer(10), notnull:true }
     direccion:					{ type: string(45) }
     ciudad:						{ type: string(45) }
     user_id:					{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
@@ -79,15 +80,15 @@ Equipo:
    origen:   					{ type: string(45) }
    marca:      					{ type: string(45), notnull:true }
    peso:       					{ type: integer(10) }
-   estado:     					{ type: boolean, notnull:true }
+   estado:     					{ type: enum, values: ['Bueno', 'Malo'] }
    detalle:    					{ type: string(255) }
    user_id:						{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
    categoria_id: 				{ type: integer(10) }
    empleado_id: 				{ type: integer(10) }
    venta_equipo_id:				{ type: integer(10) }
   relations: 
-   categoria: 					{ foreignAlias: equipos, onDelete: CASCADE } 
-   empleado: 					{ foreignAlias: equipos, onDelete: CASCADE }
+   Categoria: 					{ foreignAlias: equipos, onDelete: CASCADE } 
+   Empleado: 					{ foreignAlias: equipos, onDelete: CASCADE }
    VentaEquipo:                 { foreignAlias: equipos }
    sfGuardUser:
      local: user_id
@@ -98,22 +99,22 @@ VentaEquipo:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
     fecha:     					{ type: date,}
-    tipo:       				{ type: string(45), notnull:true }
+    tipo:       				{ type: enum, values: ['Contado', 'Factura','Boleta'] }
     monto:      				{ type: integer(10), notnull:true }
     detalle:    				{ type: string(255) }
 
 Categoria:
   columns:
    id:               			{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-   nombre_categoria: 			{ type: string(45), notnull:true }
+   nombre_categoria: 			{ type: enum, values: ['MB', 'HDD', 'MEM', 'PANT', 'CPU', 'TEC', 'MOU', 'BAT'] }
    descripcion:    				{ type: string(45), notnull:true } 
-   tipo:             			{ type: string(45), notnull:true }
+   tipo:             			{ type: enum, values: ['Pieza', 'Equipo'] }
 
 Pieza:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
     marca:      				{ type: string(45) }
-    estado:     				{ type: boolean }
+    estado:     				{ type: enum, values: ['Bueno', 'Malo'] }
     detalle:    				{ type: string(45) }
     user_id:					{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
     categoria_id: 				{ type: integer(10) }
@@ -121,9 +122,9 @@ Pieza:
     container_id:				{ type: integer(10) }
     venta_pieza_id:				{ type: integer(10) }
   relations:   
-    categoria: 					{ foreignAlias: Piezas, onDelete: CASCADE } 
-    empleado: 					{ foreignAlias: Piezas, onDelete: CASCADE }
-    container:                  { foreignAlias: Piezas, onDelete: CASCADE }
+    Categoria: 					{ foreignAlias: Piezas, onDelete: CASCADE } 
+    Empleado: 					{ foreignAlias: Piezas, onDelete: CASCADE }
+    Container:                  { foreignAlias: Piezas, onDelete: CASCADE }
     VentaPieza:                 { foreignAlias: Piezas, onDelete: CASCADE }
     sfGuardUser:
       local: user_id
@@ -155,7 +156,7 @@ VentaPieza:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
     fecha:     					{ type: date, notnull:true }
-    tipo:       				{ type: string(45), notnull:true }
+    tipo:       				{ type: enum, values: ['Contado', 'Factura','Boleta'] }
     monto:     					{ type: integer(10), notnull:true }
     detalle:    				{ type: string(255) }
     cliente:    				{ type: string(45), notnull:true }
@@ -167,10 +168,10 @@ VentaChatarra:
     monto:      				{ type: integer(10), notnull:true }
     fecha:      				{ type: timestamp, notnull:true }
     detalle:   					{ type: string(255), notnull:true }
-    tipo:      					{ type: string(45), notnull:true }
+    tipo:      					{ type: enum, values: ['Contado', 'Factura','Boleta'] }
     cliente_id:					{ type: integer(10) }
   relations:
-    cliente:					{ foreignAlias: VentaChatarras}
+    Cliente:					{ foreignAlias: VentaChatarras}
 
 Container:
   columns:
