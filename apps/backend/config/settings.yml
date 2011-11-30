@@ -39,10 +39,10 @@ all:
 
     # Enable the database manager
     use_database: true
-    default_culture: es_CL
-    default_user_culture: es_CL
-    default_locale: es_CL
-    default_user_locale: es_CL
+    default_culture: es_ES
+    default_user_culture: es_ES
+    default_locale: es_ES
+    default_user_locale: es_ES
   .actions:
     login_module: sfGuardAuth
     login_action: signin
