@@ -1,3 +1,21 @@
+pieza_ListadoInventario:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Pieza
+    module:               ListadoInventario
+    prefix_path:          /ListadoInventario
+    column:               id
+    with_wildcard_routes: true
+
+pieza:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Pieza
+    module:               ListadoInvetario
+    prefix_path:          /ListadoInvetario
+    column:               id
+    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
