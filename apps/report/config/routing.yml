@@ -1,3 +1,6 @@
+excel:
+  url:   /excel
+  param: { module: ListadoInventario, action: excel }
 pieza_ListadoInventario:
   class: sfDoctrineRouteCollection
   options:
