@@ -476,3 +476,8 @@ em
     font-weight: bold;
     text-decoration: none;
 }
+#content{
+    height: 430px;
+    overflow-x: scroll;
+    width: 970px;
+}
