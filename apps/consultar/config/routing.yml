@@ -1,3 +1,21 @@
+empleado:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                empleado
+    module:               consultarEmpleado
+    prefix_path:          /consultarEmpleado
+    column:               id
+    with_wildcard_routes: true
+
+usuario:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                usuario
+    module:               consultarUsuario
+    prefix_path:          /consultarUsuario
+    column:               id
+    with_wildcard_routes: true
+
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
