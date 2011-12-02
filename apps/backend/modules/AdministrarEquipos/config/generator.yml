@@ -31,13 +31,13 @@ generator:
       edit:   
        title: Editar Equipo %%marca%%
        display:
-         "Datos equipo": [id ,origen, marca, peso, estado, detalle, user_id, categoria_id, empleado_id, venta_equipo_id] 
+         "Datos equipo": [id ,origen, marca, peso, estado, detalle, usuario_id, categoria_id, empleado_id, venta_equipo_id] 
       new:
        title: Ingresar Nuevo Equipo 
        display:
-         "Datos equipo": [id ,origen, marca, peso, estado, detalle, user_id, categoria_id, empleado_id, venta_equipo_id] 
+         "Datos equipo": [id ,origen, marca, peso, estado, detalle, usuario_id, categoria_id, empleado_id, venta_equipo_id] 
       show:
        title: Revisar Equipo
        display:
-          "Datos equipo": [id ,origen, marca, peso, estado, detalle, user_id, categoria_id, empleado_id, venta_equipo_id] 
+          "Datos equipo": [id ,origen, marca, peso, estado, detalle, usuario_id, categoria_id, empleado_id, venta_equipo_id] 
  
