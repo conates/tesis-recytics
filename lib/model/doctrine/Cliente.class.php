@@ -12,5 +12,7 @@
  */
 class Cliente extends BaseCliente
 {
-
+	public function __toString() {
+        return sprintf('%s', $this->getRazonSocial());
+    }
 }
