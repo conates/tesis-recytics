@@ -1,12 +1,3 @@
-Equipo:
-  Equipo_1:
-    origen: notebook
-    marca: hp
-    peso: '56321'
-    estado: '1'
-    detalle: 'equipo en buen estado'
-    sfGuardUser: sfGuardUser_3
-    Empleado: Empleado_1
 Cliente:
   Cliente_1:
     rut: 11111111-1
