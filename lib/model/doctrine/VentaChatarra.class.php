@@ -12,5 +12,7 @@
  */
 class VentaChatarra extends BaseVentaChatarra
 {
-
+	public function __toString() {
+        return sprintf('%s', $this->getTipo()." " .$this->getFecha());
+    }
 }

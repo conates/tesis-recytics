@@ -12,5 +12,7 @@
  */
 class Pieza extends BasePieza
 {
-
+	public function __toString() {
+        return sprintf('%s', $this->getMarca());
+    }
 }

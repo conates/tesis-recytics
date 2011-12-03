@@ -13,4 +13,8 @@
 class Container extends BaseContainer
 {
 
+	public function __toString() {
+        return sprintf('%s', $this->getTipo());
+    }
+
 }

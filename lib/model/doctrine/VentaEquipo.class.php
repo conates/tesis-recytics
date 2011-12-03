@@ -12,5 +12,8 @@
  */
 class VentaEquipo extends BaseVentaEquipo
 {
+	public function __toString() {
+        return sprintf('%s', $this->getTipo()." " .$this->getFecha());
+    }
 
 }

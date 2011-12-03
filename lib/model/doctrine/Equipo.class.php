@@ -12,5 +12,7 @@
  */
 class Equipo extends BaseEquipo
 {
-
+	public function __toString() {
+        return sprintf('%s', $this->getMarca());
+    }
 }
