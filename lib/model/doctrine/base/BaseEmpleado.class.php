@@ -10,44 +10,50 @@
  * @property string $nombres
  * @property string $apellidos
  * @property string $email
- * @property timestamp $fecha_nac
+ * @property date $fecha_nac
  * @property string $direccion
  * @property string $ciudad_residencia
- * @property integer $telefono
- * @property timestamp $fecha_contrato
- * @property timestamp $fecha_fin_contrato
+ * @property string $telefono
+ * @property date $fecha_contrato
+ * @property date $fecha_fin_contrato
  * @property integer $sueldo
  * @property integer $user_id
  * @property sfGuardUser $sfGuardUser
+ * @property Doctrine_Collection $equipos
+ * @property Doctrine_Collection $Piezas
  * 
- * @method integer     getId()                 Returns the current record's "id" value
- * @method string      getRut()                Returns the current record's "rut" value
- * @method string      getNombres()            Returns the current record's "nombres" value
- * @method string      getApellidos()          Returns the current record's "apellidos" value
- * @method string      getEmail()              Returns the current record's "email" value
- * @method timestamp   getFechaNac()           Returns the current record's "fecha_nac" value
- * @method string      getDireccion()          Returns the current record's "direccion" value
- * @method string      getCiudadResidencia()   Returns the current record's "ciudad_residencia" value
- * @method integer     getTelefono()           Returns the current record's "telefono" value
- * @method timestamp   getFechaContrato()      Returns the current record's "fecha_contrato" value
- * @method timestamp   getFechaFinContrato()   Returns the current record's "fecha_fin_contrato" value
- * @method integer     getSueldo()             Returns the current record's "sueldo" value
- * @method integer     getUserId()             Returns the current record's "user_id" value
- * @method sfGuardUser getSfGuardUser()        Returns the current record's "sfGuardUser" value
- * @method Empleado    setId()                 Sets the current record's "id" value
- * @method Empleado    setRut()                Sets the current record's "rut" value
- * @method Empleado    setNombres()            Sets the current record's "nombres" value
- * @method Empleado    setApellidos()          Sets the current record's "apellidos" value
- * @method Empleado    setEmail()              Sets the current record's "email" value
- * @method Empleado    setFechaNac()           Sets the current record's "fecha_nac" value
- * @method Empleado    setDireccion()          Sets the current record's "direccion" value
- * @method Empleado    setCiudadResidencia()   Sets the current record's "ciudad_residencia" value
- * @method Empleado    setTelefono()           Sets the current record's "telefono" value
- * @method Empleado    setFechaContrato()      Sets the current record's "fecha_contrato" value
- * @method Empleado    setFechaFinContrato()   Sets the current record's "fecha_fin_contrato" value
- * @method Empleado    setSueldo()             Sets the current record's "sueldo" value
- * @method Empleado    setUserId()             Sets the current record's "user_id" value
- * @method Empleado    setSfGuardUser()        Sets the current record's "sfGuardUser" value
+ * @method integer             getId()                 Returns the current record's "id" value
+ * @method string              getRut()                Returns the current record's "rut" value
+ * @method string              getNombres()            Returns the current record's "nombres" value
+ * @method string              getApellidos()          Returns the current record's "apellidos" value
+ * @method string              getEmail()              Returns the current record's "email" value
+ * @method date                getFechaNac()           Returns the current record's "fecha_nac" value
+ * @method string              getDireccion()          Returns the current record's "direccion" value
+ * @method string              getCiudadResidencia()   Returns the current record's "ciudad_residencia" value
+ * @method string              getTelefono()           Returns the current record's "telefono" value
+ * @method date                getFechaContrato()      Returns the current record's "fecha_contrato" value
+ * @method date                getFechaFinContrato()   Returns the current record's "fecha_fin_contrato" value
+ * @method integer             getSueldo()             Returns the current record's "sueldo" value
+ * @method integer             getUserId()             Returns the current record's "user_id" value
+ * @method sfGuardUser         getSfGuardUser()        Returns the current record's "sfGuardUser" value
+ * @method Doctrine_Collection getEquipos()            Returns the current record's "equipos" collection
+ * @method Doctrine_Collection getPiezas()             Returns the current record's "Piezas" collection
+ * @method Empleado            setId()                 Sets the current record's "id" value
+ * @method Empleado            setRut()                Sets the current record's "rut" value
+ * @method Empleado            setNombres()            Sets the current record's "nombres" value
+ * @method Empleado            setApellidos()          Sets the current record's "apellidos" value
+ * @method Empleado            setEmail()              Sets the current record's "email" value
+ * @method Empleado            setFechaNac()           Sets the current record's "fecha_nac" value
+ * @method Empleado            setDireccion()          Sets the current record's "direccion" value
+ * @method Empleado            setCiudadResidencia()   Sets the current record's "ciudad_residencia" value
+ * @method Empleado            setTelefono()           Sets the current record's "telefono" value
+ * @method Empleado            setFechaContrato()      Sets the current record's "fecha_contrato" value
+ * @method Empleado            setFechaFinContrato()   Sets the current record's "fecha_fin_contrato" value
+ * @method Empleado            setSueldo()             Sets the current record's "sueldo" value
+ * @method Empleado            setUserId()             Sets the current record's "user_id" value
+ * @method Empleado            setSfGuardUser()        Sets the current record's "sfGuardUser" value
+ * @method Empleado            setEquipos()            Sets the current record's "equipos" collection
+ * @method Empleado            setPiezas()             Sets the current record's "Piezas" collection
  * 
  * @package    tesis
  * @subpackage model
@@ -86,28 +92,28 @@ abstract class BaseEmpleado extends sfDoctrineRecord
              'unique' => true,
              'length' => 45,
              ));
-        $this->hasColumn('fecha_nac', 'timestamp', null, array(
-             'type' => 'timestamp',
+        $this->hasColumn('fecha_nac', 'date', null, array(
+             'type' => 'date',
              ));
-        $this->hasColumn('direccion', 'string', 45, array(
+        $this->hasColumn('direccion', 'string', 250, array(
              'type' => 'string',
-             'length' => 45,
+             'length' => 250,
              ));
         $this->hasColumn('ciudad_residencia', 'string', 45, array(
              'type' => 'string',
              'length' => 45,
              ));
-        $this->hasColumn('telefono', 'integer', 10, array(
-             'type' => 'integer',
+        $this->hasColumn('telefono', 'string', 10, array(
+             'type' => 'string',
              'notnull' => true,
              'length' => 10,
              ));
-        $this->hasColumn('fecha_contrato', 'timestamp', null, array(
-             'type' => 'timestamp',
+        $this->hasColumn('fecha_contrato', 'date', null, array(
+             'type' => 'date',
              'notnull' => true,
              ));
-        $this->hasColumn('fecha_fin_contrato', 'timestamp', null, array(
-             'type' => 'timestamp',
+        $this->hasColumn('fecha_fin_contrato', 'date', null, array(
+             'type' => 'date',
              'notnull' => true,
              ));
         $this->hasColumn('sueldo', 'integer', 10, array(
@@ -130,5 +136,13 @@ abstract class BaseEmpleado extends sfDoctrineRecord
         $this->hasOne('sfGuardUser', array(
              'local' => 'user_id',
              'foreign' => 'id'));
+
+        $this->hasMany('Equipo as equipos', array(
+             'local' => 'id',
+             'foreign' => 'empleado_id'));
+
+        $this->hasMany('Pieza as Piezas', array(
+             'local' => 'id',
+             'foreign' => 'empleado_id'));
     }
 }

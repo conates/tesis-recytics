@@ -10,17 +10,20 @@
  * @property string $tipo
  * @property integer $venta_chatarra_id
  * @property VentaChatarra $VentaChatarra
+ * @property Doctrine_Collection $Piezas
  * 
- * @method integer       getId()                Returns the current record's "id" value
- * @method integer       getCapacidad()         Returns the current record's "capacidad" value
- * @method string        getTipo()              Returns the current record's "tipo" value
- * @method integer       getVentaChatarraId()   Returns the current record's "venta_chatarra_id" value
- * @method VentaChatarra getVentaChatarra()     Returns the current record's "VentaChatarra" value
- * @method Container     setId()                Sets the current record's "id" value
- * @method Container     setCapacidad()         Sets the current record's "capacidad" value
- * @method Container     setTipo()              Sets the current record's "tipo" value
- * @method Container     setVentaChatarraId()   Sets the current record's "venta_chatarra_id" value
- * @method Container     setVentaChatarra()     Sets the current record's "VentaChatarra" value
+ * @method integer             getId()                Returns the current record's "id" value
+ * @method integer             getCapacidad()         Returns the current record's "capacidad" value
+ * @method string              getTipo()              Returns the current record's "tipo" value
+ * @method integer             getVentaChatarraId()   Returns the current record's "venta_chatarra_id" value
+ * @method VentaChatarra       getVentaChatarra()     Returns the current record's "VentaChatarra" value
+ * @method Doctrine_Collection getPiezas()            Returns the current record's "Piezas" collection
+ * @method Container           setId()                Sets the current record's "id" value
+ * @method Container           setCapacidad()         Sets the current record's "capacidad" value
+ * @method Container           setTipo()              Sets the current record's "tipo" value
+ * @method Container           setVentaChatarraId()   Sets the current record's "venta_chatarra_id" value
+ * @method Container           setVentaChatarra()     Sets the current record's "VentaChatarra" value
+ * @method Container           setPiezas()            Sets the current record's "Piezas" collection
  * 
  * @package    tesis
  * @subpackage model
@@ -60,5 +63,9 @@ abstract class BaseContainer extends sfDoctrineRecord
         $this->hasOne('VentaChatarra', array(
              'local' => 'venta_chatarra_id',
              'foreign' => 'id'));
+
+        $this->hasMany('Pieza as Piezas', array(
+             'local' => 'id',
+             'foreign' => 'container_id'));
     }
 }

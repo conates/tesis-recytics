@@ -7,18 +7,20 @@
  * 
  * @property integer $id
  * @property integer $monto
- * @property timestamp $fecha
+ * @property date $fecha
  * @property string $detalle
- * @property string $tipo
+ * @property enum $tipo
  * @property integer $cliente_id
+ * @property Cliente $Cliente
  * @property Doctrine_Collection $Containers
  * 
  * @method integer             getId()         Returns the current record's "id" value
  * @method integer             getMonto()      Returns the current record's "monto" value
- * @method timestamp           getFecha()      Returns the current record's "fecha" value
+ * @method date                getFecha()      Returns the current record's "fecha" value
  * @method string              getDetalle()    Returns the current record's "detalle" value
- * @method string              getTipo()       Returns the current record's "tipo" value
+ * @method enum                getTipo()       Returns the current record's "tipo" value
  * @method integer             getClienteId()  Returns the current record's "cliente_id" value
+ * @method Cliente             getCliente()    Returns the current record's "Cliente" value
  * @method Doctrine_Collection getContainers() Returns the current record's "Containers" collection
  * @method VentaChatarra       setId()         Sets the current record's "id" value
  * @method VentaChatarra       setMonto()      Sets the current record's "monto" value
@@ -26,6 +28,7 @@
  * @method VentaChatarra       setDetalle()    Sets the current record's "detalle" value
  * @method VentaChatarra       setTipo()       Sets the current record's "tipo" value
  * @method VentaChatarra       setClienteId()  Sets the current record's "cliente_id" value
+ * @method VentaChatarra       setCliente()    Sets the current record's "Cliente" value
  * @method VentaChatarra       setContainers() Sets the current record's "Containers" collection
  * 
  * @package    tesis
@@ -49,19 +52,23 @@ abstract class BaseVentaChatarra extends sfDoctrineRecord
              'notnull' => true,
              'length' => 10,
              ));
-        $this->hasColumn('fecha', 'timestamp', null, array(
-             'type' => 'timestamp',
+        $this->hasColumn('fecha', 'date', null, array(
+             'type' => 'date',
              'notnull' => true,
              ));
-        $this->hasColumn('detalle', 'string', 255, array(
+        $this->hasColumn('detalle', 'string', 500, array(
              'type' => 'string',
              'notnull' => true,
-             'length' => 255,
+             'length' => 500,
              ));
-        $this->hasColumn('tipo', 'string', 45, array(
-             'type' => 'string',
-             'notnull' => true,
-             'length' => 45,
+        $this->hasColumn('tipo', 'enum', null, array(
+             'type' => 'enum',
+             'values' => 
+             array(
+              0 => 'Contado',
+              1 => 'Factura',
+              2 => 'Boleta',
+             ),
              ));
         $this->hasColumn('cliente_id', 'integer', 10, array(
              'type' => 'integer',
@@ -72,6 +79,10 @@ abstract class BaseVentaChatarra extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
+        $this->hasOne('Cliente', array(
+             'local' => 'cliente_id',
+             'foreign' => 'id'));
+
         $this->hasMany('Container as Containers', array(
              'local' => 'id',
              'foreign' => 'venta_chatarra_id'));
