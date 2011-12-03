@@ -19,7 +19,7 @@ class VentaChatarraForm extends BaseVentaChatarraForm
    //$this->widgetSchema['fecha'] = 
            //new sfWidgetFormDate(array('format' => $format,'years' => $years));
 		   
-	$this->validatorSchema['Monto'] = 
+	$this->validatorSchema['monto'] = 
           new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
 	
 	$this->widgetSchema['fecha'] = new sfWidgetFormJQueryDate(array(
