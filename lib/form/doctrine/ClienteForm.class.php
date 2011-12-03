@@ -24,11 +24,10 @@ class ClienteForm extends BaseClienteForm
          new sfValidatorString(array('max_length' => 45));
 		 
    $this->validatorSchema['direccion'] = 
-         new sfValidatorString(array('max_length' => 45));
+         new sfValidatorString(array('max_length' => 200));
 	
 	$this->validatorSchema['telefono_contacto'] = 
-          new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
-		 
+          new sfValidatorString(array('max_length' => 45));
 	
     $this->validatorSchema['rut']= new sfValidatorRut();
   

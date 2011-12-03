@@ -16,20 +16,20 @@ abstract class BaseVentaPiezaForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'           => new sfWidgetFormInputHidden(),
-      'fecha'        => new sfWidgetFormDateTime(),
-      'tipo'         => new sfWidgetFormInputText(),
+      'fecha'        => new sfWidgetFormDate(),
+      'tipo'         => new sfWidgetFormChoice(array('choices' => array('Contado' => 'Contado', 'Factura' => 'Factura', 'Boleta' => 'Boleta'))),
       'monto'        => new sfWidgetFormInputText(),
-      'detalle'      => new sfWidgetFormInputText(),
+      'detalle'      => new sfWidgetFormTextarea(),
       'cliente'      => new sfWidgetFormInputText(),
       'gastos_envio' => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'           => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'fecha'        => new sfValidatorDateTime(),
-      'tipo'         => new sfValidatorString(array('max_length' => 45)),
+      'fecha'        => new sfValidatorDate(),
+      'tipo'         => new sfValidatorChoice(array('choices' => array(0 => 'Contado', 1 => 'Factura', 2 => 'Boleta'), 'required' => false)),
       'monto'        => new sfValidatorInteger(),
-      'detalle'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'detalle'      => new sfValidatorString(array('max_length' => 500, 'required' => false)),
       'cliente'      => new sfValidatorString(array('max_length' => 45)),
       'gastos_envio' => new sfValidatorInteger(array('required' => false)),
     ));

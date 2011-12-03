@@ -12,9 +12,12 @@ class UsuarioForm extends BaseUsuarioForm
 {
   public function configure()
   {
+  $years = range(date('Y') - 90, date('Y'));
+  
 	$this->widgetSchema['fecha_nac'] = new sfWidgetFormJQueryDate(array(
                     'culture' => 'es',
-                    'image' => '/images/calendar.gif'
+                    'image' => '/images/calendar.gif',
+'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%', 'years' => array_combine($years, $years)))
                 ));
 				
 	$this->validatorSchema['email'] = new sfValidatorAnd(array(

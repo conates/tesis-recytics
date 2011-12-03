@@ -25,29 +25,30 @@ class EmpleadoForm extends BaseEmpleadoForm
   new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
   
     
-   $range1  = range(date('Y')-100, date('Y'));
-   $years1 = array_combine($range1,$range1);
-   $format1 = '%day%/%month%/%year%'; 
-   //$this->widgetSchema['fecha_nac'] = 
-     //      new sfWidgetFormDate(array('format' => $format1,'years' => $years1));
-   
-   $range  = range(date('Y'), date('Y')+5);
-   $years = array_combine($range,$range);
-   $format = '%day%/%month%/%year%'; 
+   $years = range(date('Y') - 90, date('Y'));
    
    $this->widgetSchema['fecha_contrato'] = new sfWidgetFormJQueryDate(array(
                     'culture' => 'es',
-                    'image' => '/images/calendar.gif'
-                ));
+                    'image' => '/images/calendar.gif',
+	    'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%')),
+                        ));
+				
+				
 	$this->widgetSchema['fecha_fin_contrato'] = new sfWidgetFormJQueryDate(array(
                     'culture' => 'es',
-                    'image' => '/images/calendar.gif'
+                    'image' => '/images/calendar.gif',
+	    'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%')),
                 ));
 	$this->widgetSchema['fecha_nac'] = new sfWidgetFormJQueryDate(array(
-					'date_widget'=> new sfWidgetFormDate(array('format' => $format1,'years' => $years1)),
-                    'culture' => 'es',
+                   'culture' => 'es',
                     'image' => '/images/calendar.gif',
+'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%', 'years' => array_combine($years, $years)))
+		
+       // 'date_widget' => new sfWidgetFormDate(array('years' => array_combine($years, $years)))	
                 ));
+				
+	
+	
 	
 	$this->validatorSchema['email'] = new sfValidatorAnd(array(
                     $this->validatorSchema['email'],
@@ -55,14 +56,8 @@ class EmpleadoForm extends BaseEmpleadoForm
                 ));
 				
     $this->validatorSchema['rut']= new sfValidatorRut();
-   
-   //$this->widgetSchema['fecha_contrato'] = 
-           //new sfWidgetFormDate(array('format' => $format,'years' => $years));
-   
-   //$this->widgetSchema['fecha_fin_contrato'] = 
-          // new sfWidgetFormDate(array('format' => $format,'years' => $years));
-      
-   $this->validatorSchema->setPostValidator(new sfValidatorSchemaCompare('fecha_contrato', '<', 'fecha_fin_contrato'));
+
+	$this->validatorSchema->setPostValidator(new sfValidatorSchemaCompare('fecha_contrato', '<', 'fecha_fin_contrato'));
   
   }
 }

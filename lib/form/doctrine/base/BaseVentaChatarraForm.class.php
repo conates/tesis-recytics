@@ -17,19 +17,19 @@ abstract class BaseVentaChatarraForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
       'monto'      => new sfWidgetFormInputText(),
-      'fecha'      => new sfWidgetFormDateTime(),
-      'detalle'    => new sfWidgetFormInputText(),
-      'tipo'       => new sfWidgetFormInputText(),
-      'cliente_id' => new sfWidgetFormInputText(),
+      'fecha'      => new sfWidgetFormDate(),
+      'detalle'    => new sfWidgetFormTextarea(),
+      'tipo'       => new sfWidgetFormChoice(array('choices' => array('Contado' => 'Contado', 'Factura' => 'Factura', 'Boleta' => 'Boleta'))),
+      'cliente_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Cliente'), 'add_empty' => true)),
     ));
 
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'monto'      => new sfValidatorInteger(),
-      'fecha'      => new sfValidatorDateTime(),
-      'detalle'    => new sfValidatorString(array('max_length' => 255)),
-      'tipo'       => new sfValidatorString(array('max_length' => 45)),
-      'cliente_id' => new sfValidatorInteger(array('required' => false)),
+      'fecha'      => new sfValidatorDate(),
+      'detalle'    => new sfValidatorString(array('max_length' => 500)),
+      'tipo'       => new sfValidatorChoice(array('choices' => array(0 => 'Contado', 1 => 'Factura', 2 => 'Boleta'), 'required' => false)),
+      'cliente_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Cliente'), 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('venta_chatarra[%s]');

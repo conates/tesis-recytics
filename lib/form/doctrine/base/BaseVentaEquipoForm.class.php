@@ -16,18 +16,18 @@ abstract class BaseVentaEquipoForm extends BaseFormDoctrine
   {
     $this->setWidgets(array(
       'id'      => new sfWidgetFormInputHidden(),
-      'fecha'   => new sfWidgetFormDateTime(),
-      'tipo'    => new sfWidgetFormInputText(),
+      'fecha'   => new sfWidgetFormDate(),
+      'tipo'    => new sfWidgetFormChoice(array('choices' => array('Contado' => 'Contado', 'Factura' => 'Factura', 'Boleta' => 'Boleta'))),
       'monto'   => new sfWidgetFormInputText(),
-      'detalle' => new sfWidgetFormInputText(),
+      'detalle' => new sfWidgetFormTextarea(),
     ));
 
     $this->setValidators(array(
       'id'      => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'fecha'   => new sfValidatorDateTime(),
-      'tipo'    => new sfValidatorString(array('max_length' => 45)),
+      'fecha'   => new sfValidatorDate(array('required' => false)),
+      'tipo'    => new sfValidatorChoice(array('choices' => array(0 => 'Contado', 1 => 'Factura', 2 => 'Boleta'), 'required' => false)),
       'monto'   => new sfValidatorInteger(),
-      'detalle' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'detalle' => new sfValidatorString(array('max_length' => 500, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('venta_equipo[%s]');
