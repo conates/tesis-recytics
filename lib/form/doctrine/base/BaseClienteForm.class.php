@@ -30,8 +30,8 @@ abstract class BaseClienteForm extends BaseFormDoctrine
       'razon_social'         => new sfValidatorString(array('max_length' => 45)),
       'giro'                 => new sfValidatorString(array('max_length' => 45)),
       'nombre_representante' => new sfValidatorString(array('max_length' => 45)),
-      'direccion'            => new sfValidatorString(array('max_length' => 45, 'required' => false)),
-      'telefono_contacto'    => new sfValidatorInteger(array('required' => false)),
+      'direccion'            => new sfValidatorString(array('max_length' => 250, 'required' => false)),
+      'telefono_contacto'    => new sfValidatorString(array('max_length' => 10, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('cliente[%s]');

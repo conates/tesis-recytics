@@ -12,6 +12,8 @@
  */
 class Usuario extends BaseUsuario
 {
-	
+	public function __toString() {
+        return sprintf('%s', $this->getNombres()." " .$this->getApellidos());
+    }
 
 }

@@ -11,22 +11,25 @@
  * @property string $giro
  * @property string $nombre_representante
  * @property string $direccion
- * @property integer $telefono_contacto
+ * @property string $telefono_contacto
+ * @property Doctrine_Collection $VentaChatarras
  * 
- * @method integer getId()                   Returns the current record's "id" value
- * @method string  getRut()                  Returns the current record's "rut" value
- * @method string  getRazonSocial()          Returns the current record's "razon_social" value
- * @method string  getGiro()                 Returns the current record's "giro" value
- * @method string  getNombreRepresentante()  Returns the current record's "nombre_representante" value
- * @method string  getDireccion()            Returns the current record's "direccion" value
- * @method integer getTelefonoContacto()     Returns the current record's "telefono_contacto" value
- * @method Cliente setId()                   Sets the current record's "id" value
- * @method Cliente setRut()                  Sets the current record's "rut" value
- * @method Cliente setRazonSocial()          Sets the current record's "razon_social" value
- * @method Cliente setGiro()                 Sets the current record's "giro" value
- * @method Cliente setNombreRepresentante()  Sets the current record's "nombre_representante" value
- * @method Cliente setDireccion()            Sets the current record's "direccion" value
- * @method Cliente setTelefonoContacto()     Sets the current record's "telefono_contacto" value
+ * @method integer             getId()                   Returns the current record's "id" value
+ * @method string              getRut()                  Returns the current record's "rut" value
+ * @method string              getRazonSocial()          Returns the current record's "razon_social" value
+ * @method string              getGiro()                 Returns the current record's "giro" value
+ * @method string              getNombreRepresentante()  Returns the current record's "nombre_representante" value
+ * @method string              getDireccion()            Returns the current record's "direccion" value
+ * @method string              getTelefonoContacto()     Returns the current record's "telefono_contacto" value
+ * @method Doctrine_Collection getVentaChatarras()       Returns the current record's "VentaChatarras" collection
+ * @method Cliente             setId()                   Sets the current record's "id" value
+ * @method Cliente             setRut()                  Sets the current record's "rut" value
+ * @method Cliente             setRazonSocial()          Sets the current record's "razon_social" value
+ * @method Cliente             setGiro()                 Sets the current record's "giro" value
+ * @method Cliente             setNombreRepresentante()  Sets the current record's "nombre_representante" value
+ * @method Cliente             setDireccion()            Sets the current record's "direccion" value
+ * @method Cliente             setTelefonoContacto()     Sets the current record's "telefono_contacto" value
+ * @method Cliente             setVentaChatarras()       Sets the current record's "VentaChatarras" collection
  * 
  * @package    tesis
  * @subpackage model
@@ -64,19 +67,21 @@ abstract class BaseCliente extends sfDoctrineRecord
              'notnull' => true,
              'length' => 45,
              ));
-        $this->hasColumn('direccion', 'string', 45, array(
+        $this->hasColumn('direccion', 'string', 250, array(
              'type' => 'string',
-             'length' => 45,
+             'length' => 250,
              ));
-        $this->hasColumn('telefono_contacto', 'integer', 45, array(
-             'type' => 'integer',
-             'length' => 45,
+        $this->hasColumn('telefono_contacto', 'string', 10, array(
+             'type' => 'string',
+             'length' => 10,
              ));
     }
 
     public function setUp()
     {
         parent::setUp();
-        
+        $this->hasMany('VentaChatarra as VentaChatarras', array(
+             'local' => 'id',
+             'foreign' => 'cliente_id'));
     }
 }

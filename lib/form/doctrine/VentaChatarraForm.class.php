@@ -23,8 +23,9 @@ class VentaChatarraForm extends BaseVentaChatarraForm
           new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
 	
 	$this->widgetSchema['fecha'] = new sfWidgetFormJQueryDate(array(
-                    'culture' => 'es',
-                    'image' => '/images/calendar.gif'
+                   'culture' => 'es',
+                   'image' => '/images/calendar.gif',
+                   'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%'))
                 ));
   
   }

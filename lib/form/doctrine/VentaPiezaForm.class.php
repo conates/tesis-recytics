@@ -12,9 +12,9 @@ class VentaPiezaForm extends BaseVentaPiezaForm
 {
   public function configure()
   {
-  $range  = range(date('Y'), date('Y')+5);
+  /*$range  = range(date('Y'), date('Y')+5);
    $years = array_combine($range,$range);
-   $format = '%day%/%month%/%year%'; 
+   $format = '%day%/%month%/%year%'; */
    
    //$this->widgetSchema['fecha'] = 
            //new sfWidgetFormDate(array('format' => $format,'years' => $years));
@@ -26,8 +26,9 @@ class VentaPiezaForm extends BaseVentaPiezaForm
           new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));	
 
 	$this->widgetSchema['fecha'] = new sfWidgetFormJQueryDate(array(
-                    'culture' => 'es',
-                    'image' => '/images/calendar.gif'
+                   'culture' => 'es',
+                   'image' => '/images/calendar.gif',
+                   'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%'))
                 ));
 	
   }

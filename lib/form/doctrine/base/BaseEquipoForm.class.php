@@ -19,11 +19,11 @@ abstract class BaseEquipoForm extends BaseFormDoctrine
       'origen'          => new sfWidgetFormInputText(),
       'marca'           => new sfWidgetFormInputText(),
       'peso'            => new sfWidgetFormInputText(),
-      'estado'          => new sfWidgetFormInputCheckbox(),
-      'detalle'         => new sfWidgetFormInputText(),
-      'user_id'         => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'add_empty' => true)),
-      'categoria_id'    => new sfWidgetFormInputText(),
-      'empleado_id'     => new sfWidgetFormInputText(),
+      'estado'          => new sfWidgetFormChoice(array('choices' => array('Bueno' => 'Bueno', 'Malo' => 'Malo'))),
+      'detalle'         => new sfWidgetFormTextarea(),
+      'usuario_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Usuario'), 'add_empty' => false)),
+      'categoria_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Categoria'), 'add_empty' => false)),
+      'empleado_id'     => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Empleado'), 'add_empty' => false)),
       'venta_equipo_id' => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('VentaEquipo'), 'add_empty' => true)),
     ));
 
@@ -32,17 +32,13 @@ abstract class BaseEquipoForm extends BaseFormDoctrine
       'origen'          => new sfValidatorString(array('max_length' => 45, 'required' => false)),
       'marca'           => new sfValidatorString(array('max_length' => 45)),
       'peso'            => new sfValidatorInteger(array('required' => false)),
-      'estado'          => new sfValidatorBoolean(),
-      'detalle'         => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'user_id'         => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('sfGuardUser'), 'required' => false)),
-      'categoria_id'    => new sfValidatorInteger(array('required' => false)),
-      'empleado_id'     => new sfValidatorInteger(array('required' => false)),
+      'estado'          => new sfValidatorChoice(array('choices' => array(0 => 'Bueno', 1 => 'Malo'), 'required' => false)),
+      'detalle'         => new sfValidatorString(array('max_length' => 500, 'required' => false)),
+      'usuario_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Usuario'))),
+      'categoria_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Categoria'))),
+      'empleado_id'     => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Empleado'))),
       'venta_equipo_id' => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('VentaEquipo'), 'required' => false)),
     ));
-
-    $this->validatorSchema->setPostValidator(
-      new sfValidatorDoctrineUnique(array('model' => 'Equipo', 'column' => array('user_id')))
-    );
 
     $this->widgetSchema->setNameFormat('equipo[%s]');
 
