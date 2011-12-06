@@ -14,13 +14,13 @@ generator:
     config:
       actions: ~
       fields:  
-        rut:                  { label: Rut}
+        rut:                  { label: Rut, help: formato de rut: 11111111-1}
         nombres:              { label: Nombres}
         apellidos:            { label: Apellidos }
         email:                { label: Email}
         fecha_nac:            { label: Fecha de Nacimiento}
         direccion:            { label: Dirección }
-        ciudad_resirencia:    { label: Ciudad de Residencia}
+        ciudad_residencia:    { label: Ciudad de Residencia}
         telefono:             { label: Teléfono}
         fecha_contrato:       { label: Fecha Contrato }
         fecha_fin_contrato:   { label: Fecha Fin Contrato}
