@@ -27,7 +27,12 @@
     </li>
 	<li><a href="#">Consultas</a>
 	    <ul>
-            <li><a href="/consultar.php/consultarEmpleado">Consulta de Empleado</a></li>
+            <li><a href="/consultar.php/consultarEmpleado">Consulta de Empleados</a></li>
+            <li><a href="/consultar.php/consultarCliente">Consulta de Clientes</a></li>
+			<li><a href="/consultar.php/consultarUsuario">Consulta de Usuarios</a></li>
+			<li><a href="/consultar.php/consultarVentaEquipo">Consulta Venta de Equipos</a></li>
+			<li><a href="/consultar.php/consultarVentaPieza">Consulta Venta Piezas</a></li>
+
         </ul>
 	
 	</li>
