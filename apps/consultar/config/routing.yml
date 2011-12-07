@@ -1,3 +1,30 @@
+ventaequipo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ventaequipo
+    module:               consultarVentaEquipo
+    prefix_path:          /consultarVentaEquipo
+    column:               id
+    with_wildcard_routes: true
+
+cliente:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                cliente
+    module:               consultarCliente
+    prefix_path:          /consultarCliente
+    column:               id
+    with_wildcard_routes: true
+    
+ventapieza:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ventapieza
+    module:               consultarVentaPieza
+    prefix_path:          /consultarVentaPieza
+    column:               id
+    with_wildcard_routes: true
+    
 empleado:
   class: sfDoctrineRouteCollection
   options:
