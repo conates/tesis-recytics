@@ -17,6 +17,10 @@ class UsuarioForm extends BaseUsuarioForm
 	$this->widgetSchema['fecha_nac'] = new sfWidgetFormJQueryDate(array(
                     'culture' => 'es',
                     'image' => '/images/calendar.gif',
+					'config' => '{changeMonth: true, changeYear: true, firstDay: 1, 
+			dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+monthNamesMin: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+              }',
 'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%', 'years' => array_combine($years, $years)))
                 ));
 				

@@ -25,6 +25,8 @@ class VentaChatarraForm extends BaseVentaChatarraForm
 	$this->widgetSchema['fecha'] = new sfWidgetFormJQueryDate(array(
                    'culture' => 'es',
                    'image' => '/images/calendar.gif',
+				   'config' => '{changeMonth: true,
+					dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"]}',
                    'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%'))
                 ));
   

@@ -19,7 +19,7 @@ class VentaPiezaForm extends BaseVentaPiezaForm
    //$this->widgetSchema['fecha'] = 
            //new sfWidgetFormDate(array('format' => $format,'years' => $years));
 		   
-	$this->validatorSchema['Monto'] = 
+	$this->validatorSchema['monto'] = 
           new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
 
     $this->validatorSchema['gastos_envio'] = 
@@ -28,6 +28,8 @@ class VentaPiezaForm extends BaseVentaPiezaForm
 	$this->widgetSchema['fecha'] = new sfWidgetFormJQueryDate(array(
                    'culture' => 'es',
                    'image' => '/images/calendar.gif',
+				   'config' => '{changeMonth: true,
+					dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"]}',
                    'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%'))
                 ));
 	

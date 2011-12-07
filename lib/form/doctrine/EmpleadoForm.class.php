@@ -16,33 +16,48 @@ class EmpleadoForm extends BaseEmpleadoForm
          new sfValidatorString(array('max_length' => 40));
 		 
   $this->validatorSchema['apellidos'] = 
-         new sfValidatorString(array('max_length' => 40));
+         
 		 
   $this->validatorSchema['telefono'] = 
-  new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
+new sfValidatorString(array('max_length' => 10));
   
   $this->validatorSchema['sueldo'] = 
   new sfValidatorInteger(array(), array('invalid' => 'Debes ingresar un Numero.'));
   
     
-   $years = range(date('Y') - 90, date('Y'));
+   
    
    $this->widgetSchema['fecha_contrato'] = new sfWidgetFormJQueryDate(array(
                     'culture' => 'es',
                     'image' => '/images/calendar.gif',
-	    'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%')),
+					'config' => '{changeMonth: true,
+					dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"]}',
+	    //'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%')),
                         ));
 				
 				
 	$this->widgetSchema['fecha_fin_contrato'] = new sfWidgetFormJQueryDate(array(
                     'culture' => 'es',
                     'image' => '/images/calendar.gif',
+					'config' => '{changeMonth: true,
+					dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"]}',
+					
 	    'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%')),
                 ));
+				
+	$years = range(date('Y') , date('Y')-50);
+	
 	$this->widgetSchema['fecha_nac'] = new sfWidgetFormJQueryDate(array(
                    'culture' => 'es',
                     'image' => '/images/calendar.gif',
+					'config' => '{changeMonth: true, changeYear: true, showOn: "button",
+					firstDay: 1, 
+			dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+              }',
 'date_widget' => new sfWidgetFormDate(array('format' => '%day% %month% %year%', 'years' => array_combine($years, $years)))
+
+
+
 		
        // 'date_widget' => new sfWidgetFormDate(array('years' => array_combine($years, $years)))	
                 ));
