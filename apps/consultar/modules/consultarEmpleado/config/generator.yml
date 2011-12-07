@@ -14,8 +14,11 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:    
+       title: Empleados que reciben equipos
+       display: [nombres, apellidos, user_id]
+      filter:
+       display: [rut]	  
       form:    ~
       edit:    ~
       new:     ~

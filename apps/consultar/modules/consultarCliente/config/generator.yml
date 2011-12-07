@@ -14,8 +14,11 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:    
+       title: clientes con mas compras
+       display: [razon_social,rut,direccion]
+      filter:  
+       display: [razon_social]
       form:    ~
       edit:    ~
       new:     ~

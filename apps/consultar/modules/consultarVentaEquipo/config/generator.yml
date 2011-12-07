@@ -14,8 +14,11 @@ generator:
     config:
       actions: ~
       fields:  ~
-      list:    ~
-      filter:  ~
+      list:    
+        title: Consultar Ventas de Equipo
+        display: [detalle]
+      filter: 
+        display: [tipo]
       form:    ~
       edit:    ~
       new:     ~
