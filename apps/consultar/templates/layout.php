@@ -41,7 +41,7 @@
 
             <div class="content">
                 <h1><a href="<?php echo url_for('homepage') ?>">
-                        <img src="/images/logo.jpg" alt="Jobeet Job Board" />
+                        <img src="/images/logo.jpg" alt="" />
                     </a></h1>
             </div>
         </div>
