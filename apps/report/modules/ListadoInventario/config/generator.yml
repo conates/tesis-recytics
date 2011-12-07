@@ -13,8 +13,10 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
+      fields:  
+      list:    
+        display: [categoria, tipo, marca, detalle, cantidad]
+        object_actions: []
       filter:  ~
       form:    ~
       edit:    ~
