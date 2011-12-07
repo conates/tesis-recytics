@@ -13,9 +13,27 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
-      list:    ~
-      filter:  ~
+      fields:  
+        rut:                  { label: Rut, help : formato de rut: 11111111-1}
+        nombres:              { label: Nombres}
+        apellidos:            { label: Apellidos }
+        email:                { label: Email, help: formato de email tunombre@tucorreo.com}
+        fecha_nac:            { label: Fecha de Nacimiento}
+        direccion:            { label: Direccion }
+        ciudad_resirencia:    { label: Ciudad de Residencia}
+        telefono:             { label: Telefono, help: Codigo de area + Numero telefonico}
+        fecha_contrato:       { label: Fecha Contrato }
+        fecha_fin_contrato:   { label: Fecha Fin Contrato}
+        sueldo:               { label: Sueldo}
+        user_id:              { label: Usuario }
+      list:   
+       title: Lista de Usuarios
+      filter:  
+       display: [rut]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:    
+       title: Editar Usuario %%nombres%% %%apellidos%%
+      new:    
+       title: Ingresar Nuevo Usuario
+      show:
+       title: Revisar Usuario

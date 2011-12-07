@@ -17,11 +17,11 @@ generator:
         rut:                  { label: Rut, help: formato de rut: 11111111-1}
         nombres:              { label: Nombres}
         apellidos:            { label: Apellidos }
-        email:                { label: Email}
+        email:                { label: Email, help: formato de email tunombre@tucorreo.com}
         fecha_nac:            { label: Fecha de Nacimiento}
         direccion:            { label: Dirección }
         ciudad_residencia:    { label: Ciudad de Residencia}
-        telefono:             { label: Teléfono}
+        telefono:             { label: Teléfono, help: Codigo de area + Numero telefonico}
         fecha_contrato:       { label: Fecha Contrato }
         fecha_fin_contrato:   { label: Fecha Fin Contrato}
         sueldo:               { label: Sueldo}

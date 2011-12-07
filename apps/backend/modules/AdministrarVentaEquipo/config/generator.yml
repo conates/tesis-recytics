@@ -14,8 +14,8 @@ generator:
     config:
       actions: ~
       fields:  
-        fecha:                 { label: Fecha}
-        tipo:                  { label: Tipo}
+        fecha:                 { label: Fecha De venta}
+        tipo:                  { label: Tipo De Pago}
         monto:                 { label: Monto }
         detalle:               { label: Detalle }
 

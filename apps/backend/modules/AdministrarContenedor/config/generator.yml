@@ -15,7 +15,7 @@ generator:
       actions: ~
       fields:  
         capacidad:                { label: Capacidad}
-        tipo:                     { label: Tipo}
+        tipo:                     { label: Tipo de Contenedor}
         venta_chatarra_id:        { label: Venta de Chatarra }
 
       list:    
