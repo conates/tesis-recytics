@@ -19,8 +19,8 @@ class ClienteFormFilter extends BaseClienteFormFilter {
     public function addRazonSocialColumnQuery(Doctrine_Query $query, $field, $values) {
 
         if ($values['text'] != '') {
-            
-            $query->innerJoin('r.VentaChatarras v')
+            //die($query);
+            $query//->innerJoin('r.VentaChatarras v')
                     ->andWhere("r.razon_social LIKE ?", '%' . $values['text'] . '%');
         }
     }
