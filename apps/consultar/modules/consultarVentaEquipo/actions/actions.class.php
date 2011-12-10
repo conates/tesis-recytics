@@ -16,12 +16,10 @@ class consultarVentaEquipoActions extends autoConsultarVentaEquipoActions {
     protected function buildQuery() {
 
         $query = parent::buildQuery();
-        $query->addSelect('v.id, e.marca as marca, e.estado as estado, v.detalle as detalle, sum(v.monto) as total, v.tipo as tipo')
-                ->from('VentaEquipo v')
-                ->innerJoin("v.equipos e")
-                ->groupBy('v.id')
-                ->orderBy('v.monto DESC');
-        //echo $query->getSqlQuery();                                    
+        $query->addSelect('r.id, e.marca as marca, e.estado as estado, r.detalle as detalle, sum(r.monto) as total, r.tipo as tipo')
+                ->innerJoin("r.equipos e")
+                ->groupBy('r.id')
+                ->orderBy('r.monto DESC');
         return $query;
     }
 

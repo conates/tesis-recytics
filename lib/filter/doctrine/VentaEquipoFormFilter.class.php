@@ -18,7 +18,7 @@ class VentaEquipoFormFilter extends BaseVentaEquipoFormFilter {
 
     public function addTipoColumnQuery(Doctrine_Query $query, $field, $values) {
         if ($values['text'] != '') {
-            $query->innerJoin('r.equipos e')
+            $query//->innerJoin('r.equipos e')
                   ->andWhere("r.tipo LIKE ?", '%' . $values['text'] . '%');
         }
     }
