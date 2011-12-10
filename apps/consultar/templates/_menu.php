@@ -22,20 +22,20 @@
     <li><a href="/AdministrarCategorias">Categorias</a></li>
     <li><a href="#">Reportes</a>
         <ul>
-            <li><a href="/report.php/ListadoInventario">Piezas</a></li>
-            <li><a href="/report.php/InventarioEquipo">Equipos</a></li>
-            <li><a href="/report.php/InventarioEquipo">Equipos y Piezas por categoria</a></li>
-            <li><a href="/report.php/InventarioEquipo">Ventas por periodo</a></li>
-            <li><a href="/report.php/InventarioEquipo">Ventas a recicladoras</a></li>
+            <li><a href="/report.php/InventarioEquipo#">Equipos</a></li>
+			<li><a href="/report.php/ListadoInventario#">Piezas</a></li>
+			<li><a href="/report.php/">Equipos y Piezas por categoria</a></li>
+			<li><a href="/report.php/#">Ventas por periodo</a></li>
+			<li><a href="/report.php/ListadoVentaRecicladora">Ventas a recicladoras</a></li>
         </ul>
     </li>
 	<li><a href="#">Consultas</a>
 	    <ul>
-            <li><a href="/consultar.php/consultarEmpleado">Consulta de Empleados</a></li>
-            <li><a href="/consultar.php/consultarCliente">Consulta de Clientes</a></li>
-			<li><a href="/consultar.php/consultarUsuario">Consulta de Usuarios</a></li>
-			<li><a href="/consultar.php/consultarVentaEquipo">Consulta Venta de Equipos</a></li>
-			<li><a href="/consultar.php/consultarVentaPieza">Consulta Venta Piezas</a></li>
+            <li><a href="/consultar.php/consultarEmpleado">Empleados</a></li>
+			<li><a href="/consultar.php/consultarCliente">Clientes</a></li>
+			<li><a href="/consultar.php/consultarUsuario">Donantes</a></li>
+			<li><a href="/consultar.php/consultarVentaEquipo">Venta de equipos</a></li>
+			<li><a href="/consultar.php/consultarVentaPieza">Venta de piezas</a></li>
 
         </ul>
 	
