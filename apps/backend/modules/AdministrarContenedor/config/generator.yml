@@ -26,7 +26,7 @@ generator:
       edit:    
         title: Editar Contenedor %%id%%
         display:
-          "Datos Contenedor": [capacidad,tipo]
+          "Datos Contenedor": [capacidad,tipo,venta_chatarra_id]
       new:
         title: Ingresar Contenedor
         display:
