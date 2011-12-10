@@ -16,12 +16,10 @@ class consultarClienteActions extends autoConsultarClienteActions {
     protected function buildQuery() {
 
         $query = parent::buildQuery();
-        $query->addSelect('c.id, c.razon_social as nombre, c.rut as rut, c.direccion as direccion, v.tipo as tipo, sum(v.monto) as total')
-                ->from('Cliente c')
-                ->innerJoin("c.VentaChatarras v")
-                ->groupBy('c.id')
+        $query->addSelect('r.id, r.razon_social as nombre, r.rut as rut, r.direccion as direccion, v.tipo as tipo, sum(v.monto) as total')
+                ->innerJoin("r.VentaChatarras v")
+                ->groupBy('r.id')
                 ->orderBy('v.monto DESC');
-        //echo $query->getSqlQuery();                                    
         return $query;
     }
 
