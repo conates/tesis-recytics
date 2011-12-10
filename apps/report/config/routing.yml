@@ -1,6 +1,20 @@
+equipo:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                equipo
+    module:               InvetarioEquipo
+    prefix_path:          /InvetarioEquipo
+    column:               id
+    with_wildcard_routes: true
+
 excel:
   url:   /excel
   param: { module: ListadoInventario, action: excel }
+  
+excelEquipo:
+  url:   /excelEquipo
+  param: { module: InvetarioEquipo, action: excel }
+   
 pieza_ListadoInventario:
   class: sfDoctrineRouteCollection
   options:

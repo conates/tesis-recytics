@@ -16,4 +16,16 @@ class EquipoTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Equipo');
     }
+    public function getLitadoEquipo(){
+        $query = Doctrine_Query::create()
+                ->addSelect("r.id, c.tipo as tipo, c.nombre_categoria as categoria, count(r.categoria_id) as cantidad")
+                ->from("Equipo r")
+                ->innerJoin("r.Categoria c")
+                ->innerjoin("r.Usuario u")
+                ->addWhere('r.venta_equipo_id is null')
+                ->groupBy("r.marca")
+                ->fetchArray()
+        ;
+                return $query;
+    }
 }
