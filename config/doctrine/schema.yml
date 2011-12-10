@@ -151,15 +151,18 @@ VentaPieza:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
     fecha:     					{ type: date, notnull:true }
     tipo:       				{ type: enum, values: ['Contado', 'Factura','Boleta'] }
-    monto:     					{ type: integer(10), notnull:true }
+    monto:     					{ type: integer(10)}
     detalle:    				{ type: string(500) }
     cliente:    				{ type: string(45), notnull:true }
     gastos_envio: 				{ type: integer(10) }
+    categoria_id: 				{ type: integer(10), notnull:true }
+  relations:
+    Categoria: 					{ foreignAlias: Piezas, onDelete: CASCADE } 
 
 VentaChatarra:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    monto:      				{ type: integer(10), notnull:true }
+    monto:      				{ type: integer(10) }
     fecha:      				{ type: date, notnull:true }
     detalle:   					{ type: string(500), notnull:true }
     tipo:      					{ type: enum, values: ['Contado', 'Factura','Boleta'] }
