@@ -43,21 +43,21 @@
 	<div class="dash">
         <span>Reportes</span>
         <ul>
-            <li><a href="#">Equipos</a></li>
-			<li><a href="#">Piezas</a></li>
-			<li><a href="#">Equipos y Piezas por categoria</a></li>
-			<li><a href="#">Ventas por periodo</a></li>
-			<li><a href="#">Ventas a recicladoras</a></li>
+            <li><a href="/report.php/#">Equipos</a></li>
+			<li><a href="/report.php/#">Piezas</a></li>
+			<li><a href="/report.php/#">Equipos y Piezas por categoria</a></li>
+			<li><a href="/report.php/#">Ventas por periodo</a></li>
+			<li><a href="/report.php/#">Ventas a recicladoras</a></li>
         </ul>
     </div>
 	<div class="dash">
         <span>Consultas</span>
         <ul>
-            <li><a href="/consultarEmpleado">Empleados</a></li>
-			<li><a href="/consultarCliente">Clientes</a></li>
-			<li><a href="/consultarUsuario">Donantes</a></li>
-			<li><a href="/consultarVentaEquipo">Venta de equipos</a></li>
-			<li><a href="/consultarVentaPieza">Venta de piezas</a></li>
+            <li><a href="/consultar.php/consultarEmpleado">Empleados</a></li>
+			<li><a href="/consultar.php/consultarCliente">Clientes</a></li>
+			<li><a href="/consultar.php/consultarUsuario">Donantes</a></li>
+			<li><a href="/consultar.php/consultarVentaEquipo">Venta de equipos</a></li>
+			<li><a href="/consultar.php/consultarVentaPieza">Venta de piezas</a></li>
         </ul>
     </div>
     <div class="dash">
