@@ -26,10 +26,24 @@ all:
   .settings:
     # Form security secret (CSRF protection)
     csrf_secret:            f4105a5b51f3b0e520986fa764b06745c742e94e
-
+    enabled_modules: [default, sfGuardGroup, sfGuardUser, sfGuardPermission, sfGuardAuth]
     # Output escaping settings
+    default_culture: es
+    default_timezone: "America/Santiago"
+    compressed: on
+    charset: utf-8
     escaping_strategy:      true
     escaping_method:        ESC_SPECIALCHARS
 
     # Enable the database manager
-    use_database:           true
+    use_database: true
+    default_culture: es_ES
+    default_user_culture: es_ES
+    default_locale: es_ES
+    default_user_locale: es_ES
+  .actions:
+    login_module: sfGuardAuth
+    login_action: signin
+
+    secure_module: sfGuardAuth
+    secure_action: secure
