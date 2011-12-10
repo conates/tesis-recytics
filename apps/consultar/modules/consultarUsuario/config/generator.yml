@@ -18,9 +18,10 @@ generator:
       list:    
        title: Consultar Usuario activos
        display: [rut, nombres, direccion, ciudad, telefono, email]
-       max_per_page: 10
+       object_actions: {}  
        actions: {}
        batch_actions: {}
+       max_per_page: 10
       filter: 
        display: [user_id]	  
       form:    ~

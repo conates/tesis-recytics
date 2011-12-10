@@ -16,8 +16,12 @@ generator:
       fields:  ~
       list:    
        title: clientes con mas compras
-       display: [razon_social,rut,direccion]
-      filter:  
+       display: [nombre, rut, direccion, tipo, total]
+       object_actions: {}  
+       actions: {}
+       batch_actions: {}
+       max_per_page: 10
+      filter:
        display: [razon_social]
       form:    ~
       edit:    ~

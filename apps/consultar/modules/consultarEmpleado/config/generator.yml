@@ -16,7 +16,11 @@ generator:
       fields:  ~
       list:    
        title: Empleados que reciben equipos
-       display: [nombres, apellidos, user_id]
+       display: [nombres, apellidos, cargo, total]
+       object_actions: {}  
+       actions: {}
+       batch_actions: {}
+       max_per_page: 10
       filter:
        display: [rut]	  
       form:    ~

@@ -16,7 +16,11 @@ generator:
       fields:  ~
       list:    
         title: Consultar Ventas de Equipo
-        display: [detalle]
+        display: [marca, estado, detalle,total]
+        object_actions: {}  
+        actions: {}
+        batch_actions: {}
+        max_per_page: 10
       filter: 
         display: [tipo]
       form:    ~
