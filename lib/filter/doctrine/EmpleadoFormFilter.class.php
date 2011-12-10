@@ -20,8 +20,7 @@ class EmpleadoFormFilter extends BaseEmpleadoFormFilter {
 
         if ($values['text'] != '') {
 
-            $query->innerJoin("r.equipos a")
-                    ->andWhere("r.rut LIKE ?", '%' . $values['text'] . '%');
+            $query->andWhere("r.rut LIKE ?", '%' . $values['text'] . '%');
         }
     }
 

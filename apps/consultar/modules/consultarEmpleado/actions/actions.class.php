@@ -14,13 +14,11 @@ require_once dirname(__FILE__) . '/../lib/consultarEmpleadoGeneratorHelper.class
 class consultarEmpleadoActions extends autoConsultarEmpleadoActions {
 
     protected function buildQuery() {
-
         $query = parent::buildQuery();
-        $query->addSelect('e.id, e.nombres as nombres, e.apellidos as apellidos, e.user_id as cargo,  count(a.empleado_id) as total')
-                ->from('Empleado e')
-                ->innerJoin("e.equipos a")
-                ->groupBy(' e.id');
 
+        $query->addSelect('r.id, r.nombres as nombres, r.apellidos as apellidos, r.user_id as cargo,  count(a.empleado_id) as total')
+                ->innerJoin("r.equipos a")
+                ->groupBy(' r.id');
         return $query;
     }
 
