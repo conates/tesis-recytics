@@ -17,10 +17,9 @@ class VentaPiezaFormFilter extends BaseVentaPiezaFormFilter {
     }
 
     public function addCategoriaIdColumnQuery(Doctrine_Query $query, $field, $values) {
-        die($query);
         if ($values['text'] != '') {
-            $query->from('Pieza p')
-                    ->innerJoin('p.VentaPieza v')
+            $query//->from('Pieza p')
+                    //->innerJoin('r.Piezas p')
                     ->andWhere("p.categoria_id LIKE ?", '%' . $values['text'] . '%');
         }
     }
