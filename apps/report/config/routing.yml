@@ -3,7 +3,7 @@ equipo:
   options:
     model:                equipo
     module:               InvetarioEquipo
-    prefix_path:          /InvetarioEquipo
+    prefix_path:          /InventarioEquipo
     column:               id
     with_wildcard_routes: true
 
