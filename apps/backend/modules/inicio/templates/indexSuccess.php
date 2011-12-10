@@ -43,11 +43,11 @@
 	<div class="dash">
         <span>Reportes</span>
         <ul>
-            <li><a href="/report.php/#">Equipos</a></li>
-			<li><a href="/report.php/#">Piezas</a></li>
-			<li><a href="/report.php/#">Equipos y Piezas por categoria</a></li>
+            <li><a href="/report.php/InventarioEquipo#">Equipos</a></li>
+			<li><a href="/report.php/ListadoInventario#">Piezas</a></li>
+			<li><a href="/report.php/">Equipos y Piezas por categoria</a></li>
 			<li><a href="/report.php/#">Ventas por periodo</a></li>
-			<li><a href="/report.php/#">Ventas a recicladoras</a></li>
+			<li><a href="/report.php/ListadoVentaRecicladora">Ventas a recicladoras</a></li>
         </ul>
     </div>
 	<div class="dash">
