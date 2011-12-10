@@ -16,4 +16,13 @@ class VentaChatarraTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('VentaChatarra');
     }
+    public function getLitado(){
+        $query = Doctrine_Query::create()
+                ->Select("r.id, r.monto as monto, r.fecha as fecha")
+                ->from("VentaChatarra r")
+//                ->addWhere('r.venta_equipo_id is null')
+                ->fetchArray()
+        ;
+                return $query;
+    }
 }
