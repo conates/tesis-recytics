@@ -21,7 +21,8 @@ generator:
        actions: {}
        batch_actions: {}
        max_per_page: 10
-      filter:  ~
+      filter:  
+       display: [tipo]
       form:    ~
       edit:    ~
       new:     ~
