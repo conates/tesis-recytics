@@ -21,7 +21,7 @@ generator:
         fecha_nac:            { label: Fecha de Nacimiento}
         direccion:            { label: Direccion }
         ciudad_resirencia:    { label: Ciudad de Residencia}
-        telefono:             { label: Telefono, help: Código de área + Número teléfono}
+        telefono:             { label: Telefono, help: Codigo de area + Numero telefono}
         fecha_contrato:       { label: Fecha Contrato }
         fecha_fin_contrato:   { label: Fecha Fin Contrato}
         sueldo:               { label: Sueldo}
