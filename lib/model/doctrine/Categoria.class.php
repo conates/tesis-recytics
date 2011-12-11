@@ -13,6 +13,6 @@
 class Categoria extends BaseCategoria
 {
 	public function __toString() {
-        return sprintf('%s', $this->getNombreCategoria());
+        return sprintf('%s', $this->getNombreCategoria()." " .$this->getTipo());
     }
 }
