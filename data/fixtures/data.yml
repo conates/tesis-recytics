@@ -1,32 +1,3 @@
-Cliente:
-  Cliente_1:
-    rut: 16230019-9
-    razon_social: Replacas
-    giro: recicladora
-    nombre_representante: 'Juan Placa'
-    direccion: 'las placas 11'
-    telefono_contacto: '9568744'
-  Cliente_2:
-    rut: 16807808-5
-    razon_social: memo
-    giro: recicladora
-    nombre_representante: 'memo bustamante'
-    direccion: 'las memo 22'
-    telefono_contacto: '7894455'
-  Cliente_3:
-    rut: 11111111-1
-    razon_social: gabinetes
-    giro: chatarra
-    nombre_representante: 'chat gab'
-    direccion: 'los gabinetes'
-    telefono_contacto: '789456332'
-  Cliente_4:
-    rut: 17076027-1
-    razon_social: chatarra
-    giro: chatarra
-    nombre_representante: chatarra
-    direccion: 'las chatarras'
-    telefono_contacto: '1236547'
 sfGuardUserPermission:
   sfGuardUserPermission_1_3:
     User: sfGuardUser_1
@@ -58,9 +29,9 @@ sfGuardUser:
     created_at: '2011-11-23 21:58:03'
     updated_at: '2011-11-29 23:19:52'
   sfGuardUser_2:
-    first_name: donante
-    last_name: donante
-    email_address: donante@donante
+    first_name: null
+    last_name: null
+    email_address: donante
     username: donante
     algorithm: sha1
     salt: donante
@@ -71,9 +42,9 @@ sfGuardUser:
     created_at: '2011-11-25 14:22:10'
     updated_at: '2011-11-25 14:24:22'
   sfGuardUser_3:
-    first_name: empleado
-    last_name: empleado
-    email_address: empleado@empleado
+    first_name: null
+    last_name: null
+    email_address: empleado
     username: empleado
     algorithm: sha1
     salt: empleado
@@ -99,29 +70,3 @@ sfGuardPermission:
     description: 'administrador de la app'
     created_at: '2011-11-29 22:47:23'
     updated_at: '2011-11-29 22:47:23'
-Empleado:
-  Empleado_1:
-    rut: 16166807-9
-    nombres: claudio
-    apellidos: onate
-    email: conates@gmail.com
-    fecha_nac: '1986-01-11 00:00:00'
-    direccion: 'santiago santa isabel'
-    ciudad_residencia: santiago
-    telefono: '75564195'
-    fecha_contrato: '2012-01-19 00:00:00'
-    fecha_fin_contrato: '2013-12-19 00:00:00'
-    sueldo: '1000000'
-  Empleado_2:
-    rut: 7654879-k
-    nombres: caro
-    apellidos: acevedo
-    email: lcaj21@gmail.com
-    fecha_nac: '1992-01-20 00:00:00'
-    direccion: 'santiago santa isabel'
-    ciudad_residencia: santiago
-    telefono: '75564195'
-    fecha_contrato: '2011-02-19 00:00:00'
-    fecha_fin_contrato: '2012-04-18 00:00:00'
-    sueldo: '1000000'
-    sfGuardUser: sfGuardUser_3
