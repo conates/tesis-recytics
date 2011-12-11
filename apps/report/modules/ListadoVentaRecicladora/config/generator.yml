@@ -15,10 +15,10 @@ generator:
       actions: ~
       fields:  ~
       list:    
-        display: [ id, monto, fecha]
+        display: [detalle, monto, fecha]
         object_actions: []
       filter:  
-        display: [ fecha]
+        display: [ cliente_id]
       form:    ~
       edit:    ~
       new:     ~

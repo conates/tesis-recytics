@@ -16,10 +16,9 @@ class ListadoVentaRecicladoraActions extends autoListadoVentaRecicladoraActions 
     protected function buildQuery() {
         $query = parent::buildQuery();
 
-        $query
-            ->innerjoin("r.Containers c")
-            ->innerJoin("c.Piezas p")
-            ->Where('p.estado = ?',"Malo")
+        $query->innerjoin("r.Containers c")
+                ->innerJoin("c.Piezas p")
+                ->addWhere('p.estado = ?', "Malo")
         ;
         //die($query);
         return $query;
