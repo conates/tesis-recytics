@@ -18,7 +18,7 @@ class VentaChatarraTable extends Doctrine_Table {
 
     public function getLitado() {
         $query = Doctrine_Query::create()
-                ->Select("r.id, r.monto as monto, r.fecha as fecha")
+                ->Select("r.id, r.detalle as detalle,r.monto as monto, r.fecha as fecha")
                 ->from("VentaChatarra r")
                 ->innerjoin("r.Containers c")
                 ->innerJoin("c.Piezas p")
