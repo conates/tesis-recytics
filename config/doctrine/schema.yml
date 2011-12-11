@@ -59,7 +59,7 @@ sfGuardUser:
 Usuario:
   columns:
     id: 						{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    rut:						{ type: string(10), notnull: true }
+    rut:						{ type: string(10), notnull: true, unique: true }
     nombres:					{ type: string(45), notnull: true }
     apellidos:					{ type: string(45), notnull: true }
     email:						{ type: string(45), notnull: true,unique: true }
@@ -77,15 +77,15 @@ Usuario:
 Equipo:
   columns:
    id:         					{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-   origen:   					{ type: string(45) }
+   origen:   					{ type: string(45), notnull:true }
    marca:      					{ type: string(45), notnull:true }
-   peso:       					{ type: integer(10) }
-   estado:     					{ type: enum, values: ['Bueno', 'Malo'] }
+   peso:       					{ type: integer(10), notnull:true }
+   estado:     					{ type: enum, values: ['Bueno', 'Malo'], notnull:true }
    detalle:    					{ type: string(500) }
    usuario_id:					{ type: integer(10), notnull:true}
    categoria_id: 				{ type: integer(10), notnull:true }
    empleado_id: 				{ type: integer(10), notnull:true }
-   venta_equipo_id:				{ type: integer(10) }
+   venta_equipo_id:				{ type: integer(10), notnull:true}
   relations: 
    Categoria: 					{ foreignAlias: equipos, onDelete: CASCADE } 
    Empleado: 					{ foreignAlias: equipos, onDelete: CASCADE }
@@ -95,29 +95,29 @@ Equipo:
 VentaEquipo:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    fecha:     					{ type: date}
-    tipo:       				{ type: enum, values: ['Contado', 'Factura','Boleta'] }
+    fecha:     					{ type: date, notnull:true}
+    tipo:       				{ type: enum, values: ['Contado', 'Factura','Boleta'], notnull:true }
     monto:      				{ type: integer(10), notnull:true }
     detalle:    				{ type: string(500) }
 
 Categoria:
   columns:
    id:               			{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-   nombre_categoria: 			{ type: enum, values: ['MB', 'HDD', 'MEM', 'PANT', 'CPU', 'TEC', 'MOU', 'BAT'] }
+   nombre_categoria: 			{ type: enum, values: ['MB', 'HDD', 'MEM', 'PANT', 'CPU', 'TEC', 'MOU', 'BAT','PC'], notnull:true }
    descripcion:    				{ type: string(500), notnull:true } 
-   tipo:             			{ type: enum, values: ['Pieza', 'Equipo'] }
+   tipo:             			{ type: enum, values: ['Pieza', 'Equipo'], notnull:true }
 
 Pieza:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    marca:      				{ type: string(45) }
-    estado:     				{ type: enum, values: ['Bueno', 'Malo'] }
+    marca:      				{ type: string(45), notnull:true }
+    estado:     				{ type: enum, values: ['Bueno', 'Malo'], notnull:true }
     detalle:    				{ type: string(500) }
     usuario_id:					{ type: integer(10), notnull:true }
     categoria_id: 				{ type: integer(10), notnull:true }
     empleado_id: 				{ type: integer(10), notnull:true }
-    container_id:				{ type: integer(10) }
-    venta_pieza_id:				{ type: integer(10) }
+    container_id:				{ type: integer(10), notnull:true }
+    venta_pieza_id:				{ type: integer(10), notnull:true }
   relations:   
     Categoria: 					{ foreignAlias: Piezas, onDelete: CASCADE } 
     Empleado: 					{ foreignAlias: Piezas, onDelete: CASCADE }
@@ -128,10 +128,10 @@ Pieza:
 Empleado:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    rut:        				{ type: string(10), notnull:true }
+    rut:        				{ type: string(10), notnull:true, unique:true }
     nombres:    				{ type: string(45), notnull:true }
     apellidos:  				{ type: string(45), notnull:true }
-    email:      				{ type: string(45), notnull:true,unique: true }        
+    email:      				{ type: string(45), notnull:true, unique: true }        
     fecha_nac:  				{ type: date }
     direccion:  				{ type: string(250) }
     ciudad_residencia:  		{ type: string(45) }
@@ -150,11 +150,11 @@ VentaPieza:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
     fecha:     					{ type: date, notnull:true }
-    tipo:       				{ type: enum, values: ['Contado', 'Factura','Boleta'] }
-    monto:     					{ type: integer(10)}
+    tipo:       				{ type: enum, values: ['Contado', 'Factura','Boleta'], notnull:true }
+    monto:     					{ type: integer(10), notnull:true}
     detalle:    				{ type: string(500) }
     cliente:    				{ type: string(45), notnull:true }
-    gastos_envio: 				{ type: integer(10) }
+    gastos_envio: 				{ type: integer(10), notnull:true }
     categoria_id: 				{ type: integer(10), notnull:true }
   relations:
     Categoria: 					{ foreignAlias: Piezas, onDelete: CASCADE } 
@@ -162,11 +162,11 @@ VentaPieza:
 VentaChatarra:
   columns:
     id:         				{ type: integer(10), primary: true, notnull: true, autoincrement: true }
-    monto:      				{ type: integer(10) }
+    monto:      				{ type: integer(10), notnull:true}
     fecha:      				{ type: date, notnull:true }
     detalle:   					{ type: string(500), notnull:true }
-    tipo:      					{ type: enum, values: ['Contado', 'Factura','Boleta'] }
-    cliente_id:					{ type: integer(10) }
+    tipo:      					{ type: enum, values: ['Contado', 'Factura','Boleta'], notnull:true }
+    cliente_id:					{ type: integer(10), notnull:true }
   relations:
     Cliente:					{ foreignAlias: VentaChatarras}
 
@@ -175,14 +175,14 @@ Container:
     id:        					{ type: integer(10), primary: true, notnull: true, autoincrement: true } 
     capacidad: 					{ type: integer(10), notnull:true }
     tipo:      					{ type: string(45), notnull:true }
-    venta_chatarra_id:			{ type: integer(10) }
+    venta_chatarra_id:			{ type: integer(10), notnull:true }
   relations:
     VentaChatarra:			    { foreignAlias: Containers }
 
 Cliente:
   columns:
     id:							{ type: integer(10), primary: true, notnull: true, autoincrement: true } 
-    rut:        				{ type: string(10), notnull:true }
+    rut:        				{ type: string(10), notnull:true, unique:true }
     razon_social:				{ type: string(45), notnull:true }
     giro:       				{ type: string(45), notnull:true }
     nombre_representante: 		{ type: string(45), notnull:true }
