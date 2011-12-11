@@ -16,7 +16,8 @@ generator:
       fields:  ~
       list:    
         object_actions: []
-      filter:  ~
+      filter:  
+        display: [estado]
       form:    ~
       edit:    ~
       new:     ~
