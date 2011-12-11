@@ -1,3 +1,12 @@
+categoria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Categoria
+    module:               ListadoGestion
+    prefix_path:          /ListadoGestion
+    column:               id
+    with_wildcard_routes: true
+
 venta_pieza:
   class: sfDoctrineRouteCollection
   options:
@@ -24,7 +33,9 @@ equipo:
     prefix_path:          /InventarioEquipo
     column:               id
     with_wildcard_routes: true
-
+excelGestion:
+  url:   /excelGestion
+  param: { module: ListadoGestion, action: excel }
 excel:
   url:   /excel
   param: { module: ListadoInventario, action: excel }
