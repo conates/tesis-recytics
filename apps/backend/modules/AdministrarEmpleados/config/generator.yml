@@ -38,7 +38,7 @@ generator:
       new:    
        title: Ingresar Empleado
        display:
-          "Datos Personales": [rut, nombres, apellidos, email, fecha_nac, direccion, ciudad_residencia, telefono, fecha_contrato, fecha_fin_contrato, sueldo, user_id]
+          "Datos Personales": [rut, nombres, apellidos, email, fecha_nac, direccion, ciudad_residencia, telefono, fecha_contrato, fecha_fin_contrato, sueldo]
       show :
           title: Revisar Empleado
           display:
