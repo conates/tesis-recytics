@@ -116,8 +116,8 @@ Pieza:
     usuario_id:					{ type: integer(10), notnull:true }
     categoria_id: 				{ type: integer(10), notnull:true }
     empleado_id: 				{ type: integer(10), notnull:true }
-    container_id:				{ type: integer(10), notnull:true }
-    venta_pieza_id:				{ type: integer(10), notnull:true }
+    container_id:				{ type: integer(10) }
+    venta_pieza_id:				{ type: integer(10) }
   relations:   
     Categoria: 					{ foreignAlias: Piezas, onDelete: CASCADE } 
     Empleado: 					{ foreignAlias: Piezas, onDelete: CASCADE }
