@@ -14,8 +14,8 @@ generator:
     config:
       actions: ~
       fields:  
-        capacidad:                { label: Capacidad,  help : ej: 1000 (kilos)}
-        tipo:                     { label: Tipo de Contenedor, help : contenedor para plasticos, cobre, aluminio, acero. }
+        capacidad:                { label: Capacidad,  help : ejemplo 1000 kilos}
+        tipo:                     { label: Tipo de Contenedor, help : contenedor para plasticos cobre aluminio acero}
         venta_chatarra_id:        { label: Venta de Chatarra }
 
       list:    
