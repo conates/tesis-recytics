@@ -67,12 +67,11 @@ Usuario:
     telefono:          			{ type: string(10), notnull:true }
     direccion:					{ type: string(250) }
     ciudad:						{ type: string(45) }
-    user_id:					{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false, unique: true}
+    user_id:					{ type: integer, fixed: false, unsigned: false, notnull: false, primary: false}
   relations:
     sfGuardUser:
       local: user_id
-      foreign: id
-      type: one
+      foreignAlias: Usuarios
 
 Equipo:
   columns:
