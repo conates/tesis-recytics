@@ -1,3 +1,12 @@
+venta_pieza:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                VentaPieza
+    module:               ListadoVentaPiezaBuena
+    prefix_path:          /ListadoVentaPiezaBuena
+    column:               id
+    with_wildcard_routes: true
+
 venta_chatarra:
   class: sfDoctrineRouteCollection
   options:
@@ -27,6 +36,9 @@ excelEquipo:
 excelChatarra:
   url:   /excelChatarra
   param: { module: ListadoVentaRecicladora, action: excel }
+excelPiezaBuena:
+  url:   /excelPiezaBuena
+  param: { module: ListadoVentaPiezaBuena, action: excel }
   
 pieza_ListadoInventario:
   class: sfDoctrineRouteCollection

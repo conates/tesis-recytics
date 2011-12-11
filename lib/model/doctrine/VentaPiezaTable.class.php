@@ -16,4 +16,15 @@ class VentaPiezaTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('VentaPieza');
     }
+    public function getLitado(){
+        $query = Doctrine_Query::create()
+                ->select("r.id, r.monto as monto, r.cliente as cliente, r.tipo as tipo, r.fecha as fecha")
+                ->from("VentaPieza r")
+                ->innerJoin("r.Piezas p")
+                ->where("p.venta_pieza_id is not null")
+                ->addwhere("p.estado = ?","Bueno")
+                ->fetchArray()
+        ;
+                return $query;
+    }
 }
