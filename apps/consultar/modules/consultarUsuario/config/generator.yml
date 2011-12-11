@@ -23,7 +23,7 @@ generator:
        batch_actions: {}
        max_per_page: 10
       filter: 
-       display: [user_id]	  
+       display: [rut]	  
       form:    ~
       edit:    ~
       new:     ~
