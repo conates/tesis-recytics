@@ -16,7 +16,7 @@ generator:
       fields:  
         origen:                   { label: Origen}
         marca:                    { label: Marca}
-        peso:                     { label: Peso }
+        peso:                     { label: Peso, help: formato peso en gramos: 2000}
         estado:                   { label: Estado}
         detalle:                  { label: Detalle}
         user_id:                  { label: Usuario }
