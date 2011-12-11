@@ -1,13 +1,13 @@
 Cliente:
   Cliente_1:
-    rut: 11111111-1
+    rut: 16230019-9
     razon_social: Replacas
     giro: recicladora
     nombre_representante: 'Juan Placa'
     direccion: 'las placas 11'
     telefono_contacto: '9568744'
   Cliente_2:
-    rut: 11111111-1
+    rut: 16807808-5
     razon_social: memo
     giro: recicladora
     nombre_representante: 'memo bustamante'
@@ -113,7 +113,7 @@ Empleado:
     fecha_fin_contrato: '2013-12-19 00:00:00'
     sueldo: '1000000'
   Empleado_2:
-    rut: 16230019-9
+    rut: 7654879-k
     nombres: caro
     apellidos: acevedo
     email: lcaj21@gmail.com
