@@ -40,8 +40,10 @@
         <div id="header">
 
             <div class="content">
+			 <?php if ($sf_user->isAuthenticated()) { ?>
                 <h1><a href="<?php echo url_for('homepage') ?>">
-                        <img src="/images/logo.jpg" alt="Jobeet Job Board" />
+                        <img src="/images/logo.jpg" alt="RecyControl" />
+			 <?php } ?> 
                     </a></h1>
             </div>
         </div>
