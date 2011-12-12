@@ -84,7 +84,7 @@ Equipo:
    usuario_id:					{ type: integer(10), notnull:true}
    categoria_id: 				{ type: integer(10), notnull:true }
    empleado_id: 				{ type: integer(10), notnull:true }
-   venta_equipo_id:				{ type: integer(10), notnull:true}
+   venta_equipo_id:				{ type: integer(10), notnull:false}
   relations: 
    Categoria: 					{ foreignAlias: equipos, onDelete: CASCADE } 
    Empleado: 					{ foreignAlias: equipos, onDelete: CASCADE }
