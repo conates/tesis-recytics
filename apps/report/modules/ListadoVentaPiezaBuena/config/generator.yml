@@ -17,6 +17,7 @@ generator:
       list:    
         display: [monto, cliente, tipo, fecha]
         object_actions: []
+        title: Listado de Ventas por Periodo
       filter:  
         display: [fecha]
       form:    ~

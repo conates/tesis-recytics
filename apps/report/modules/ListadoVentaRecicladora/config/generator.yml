@@ -17,6 +17,7 @@ generator:
       list:    
         display: [detalle, monto, fecha]
         object_actions: []
+        title: Listado de Ventas a Recicladoras
       filter:  
         display: [ cliente_id]
       form:    ~

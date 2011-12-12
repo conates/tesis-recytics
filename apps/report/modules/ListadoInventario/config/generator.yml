@@ -17,6 +17,7 @@ generator:
       list:    
         display: [categoria, tipo, marca, detalle, cantidad]
         object_actions: []
+        title: Listado de Inventario de Piezas
       filter:  
         display: [estado]
       form:    ~
