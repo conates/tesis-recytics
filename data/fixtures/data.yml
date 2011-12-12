@@ -1,3 +1,138 @@
+VentaChatarra:
+  VentaChatarra_1:
+    monto: '3500000'
+    fecha: '2011-12-11'
+    detalle: 'ventas de chatarra en muy mal estado'
+    tipo: Contado
+    Cliente: Cliente_1
+VentaPieza:
+  VentaPieza_1:
+    fecha: '2011-12-11'
+    tipo: Contado
+    monto: '45000'
+    detalle: 'venta de piezas memoria'
+    cliente: harold
+    gastos_envio: '5880'
+    Categoria: Categoria_4
+VentaEquipo:
+  VentaEquipo_1:
+    fecha: '2011-12-11'
+    tipo: Contado
+    monto: '562300'
+    detalle: 'venta de los equipos buenos'
+Usuario:
+  Usuario_1:
+    rut: 5745264-1
+    nombres: catalina
+    apellidos: lopez
+    email: catalina@gmail.com
+    fecha_nac: '1993-05-07'
+    telefono: '2093232'
+    direccion: 'villa prat 768'
+    ciudad: talcahuano
+    sfGuardUser: sfGuardUser_2
+  Usuario_3:
+    rut: 17076027-1
+    nombres: Harold
+    apellidos: 'Henriquez Navarro'
+    email: harold@gmail.com
+    fecha_nac: '1959-11-03'
+    telefono: 41-2718225
+    direccion: 'las lengas 3561'
+    ciudad: coronel
+    sfGuardUser: sfGuardUser_4
+Equipo:
+  Equipo_1:
+    origen: 'municipalidad de coronel'
+    marca: ibm
+    peso: '4000'
+    estado: Bueno
+    detalle: 'equipo en buen estado'
+    Usuario: Usuario_1
+    Categoria: Categoria_2
+    Empleado: Empleado_6
+    VentaEquipo: VentaEquipo_1
+Container:
+  Container_1:
+    capacidad: '45000'
+    tipo: 'piezas mal estado'
+    VentaChatarra: VentaChatarra_1
+Cliente:
+  Cliente_1:
+    rut: 96924740-2
+    razon_social: recycla
+    giro: 'empresa de reciclaje'
+    nombre_representante: 'Luis saldias'
+    direccion: 'av. providencia 878 santiago'
+    telefono_contacto: '879989'
+  Cliente_2:
+    rut: 99551460-5
+    razon_social: chilereciclaje
+    giro: 'reciclaje de e-waste'
+    nombre_representante: 'Javier fritz'
+    direccion: 'ciudad empresarial 989'
+    telefono_contacto: 'las condes'
+Pieza:
+  Pieza_3:
+    marca: 'packard bell'
+    estado: Bueno
+    detalle: notebook
+    Usuario: Usuario_1
+    Categoria: Categoria_4
+    Empleado: Empleado_6
+    VentaPieza: VentaPieza_1
+  Pieza_4:
+    marca: dell
+    estado: Malo
+    detalle: accesorios
+    Usuario: Usuario_1
+    Categoria: Categoria_7
+    Empleado: Empleado_6
+    Container: Container_1
+  Pieza_5:
+    marca: hp
+    estado: Malo
+    detalle: 'equipo de escritorio'
+    Usuario: Usuario_1
+    Categoria: Categoria_5
+    Empleado: Empleado_6
+Categoria:
+  Categoria_1:
+    nombre_categoria: MB
+    descripcion: 'placa madre '
+    tipo: Pieza
+  Categoria_2:
+    nombre_categoria: MB
+    descripcion: 'placa madre'
+    tipo: Equipo
+  Categoria_3:
+    nombre_categoria: HDD
+    descripcion: 'disco duro'
+    tipo: Pieza
+  Categoria_4:
+    nombre_categoria: HDD
+    descripcion: 'disco duro'
+    tipo: Equipo
+  Categoria_5:
+    nombre_categoria: PC
+    descripcion: 'pc de escritorio'
+    tipo: Equipo
+  Categoria_6:
+    nombre_categoria: TEC
+    descripcion: teclado
+    tipo: Pieza
+  Categoria_7:
+    nombre_categoria: MOU
+    descripcion: mouse
+    tipo: Pieza
+  Categoria_8:
+    nombre_categoria: BAT
+    descripcion: bateria
+    tipo: Equipo
+  Categoria_9:
+    nombre_categoria: PC
+    descripcion: pc
+    tipo: Equipo
 sfGuardUserPermission:
   sfGuardUserPermission_1_3:
     User: sfGuardUser_1
@@ -14,6 +149,16 @@ sfGuardUserPermission:
     Permission: sfGuardPermission_1
     created_at: '2011-11-29 22:46:38'
     updated_at: '2011-11-29 22:46:38'
+  sfGuardUserPermission_4_1:
+    User: sfGuardUser_4
+    Permission: sfGuardPermission_1
+    created_at: '2011-12-11 20:44:11'
+    updated_at: '2011-12-11 20:44:11'
+  sfGuardUserPermission_5_1:
+    User: sfGuardUser_5
+    Permission: sfGuardPermission_1
+    created_at: '2011-12-11 20:46:11'
+    updated_at: '2011-12-11 20:46:11'
 sfGuardUser:
   sfGuardUser_1:
     first_name: null
@@ -25,9 +170,9 @@ sfGuardUser:
     password: admin
     is_active: true
     is_super_admin: true
-    last_login: '2011-11-29 23:19:52'
+    last_login: '2011-12-11 22:33:58'
     created_at: '2011-11-23 21:58:03'
-    updated_at: '2011-11-29 23:19:52'
+    updated_at: '2011-12-11 22:33:58'
   sfGuardUser_2:
     first_name: null
     last_name: null
@@ -54,6 +199,32 @@ sfGuardUser:
     last_login: '2011-11-29 23:26:10'
     created_at: '2011-11-25 14:29:14'
     updated_at: '2011-11-29 23:26:10'
+  sfGuardUser_4:
+    first_name: null
+    last_name: null
+    email_address: pedro@recytics.com
+    username: pedro@recytics.com
+    algorithm: sha1
+    salt: pedro@recytics.com
+    password: pedro@recytics.com
+    is_active: true
+    is_super_admin: false
+    last_login: '2011-12-11 20:56:02'
+    created_at: '2011-12-11 20:44:11'
+    updated_at: '2011-12-11 20:56:02'
+  sfGuardUser_5:
+    first_name: null
+    last_name: null
+    email_address: ignacio@recytics.com
+    username: ignacio@recytics.com
+    algorithm: sha1
+    salt: ignacio@recytics.com
+    password: ignacio@recytics.com
+    is_active: true
+    is_super_admin: false
+    last_login: null
+    created_at: '2011-12-11 20:46:11'
+    updated_at: '2011-12-11 20:46:11'
 sfGuardPermission:
   sfGuardPermission_1:
     name: empleado
@@ -70,3 +241,30 @@ sfGuardPermission:
     description: 'administrador de la app'
     created_at: '2011-11-29 22:47:23'
     updated_at: '2011-11-29 22:47:23'
+Empleado:
+  Empleado_6:
+    rut: 8144494-3
+    nombres: Pedro
+    apellidos: Acuña
+    email: pedro@recytics.com
+    fecha_nac: '1982-02-02'
+    direccion: 'cantera 2 las golondrinas 159'
+    ciudad_residencia: lota
+    telefono: '8273829'
+    fecha_contrato: '2007-01-03'
+    fecha_fin_contrato: '2015-01-01'
+    sueldo: '150000'
+    sfGuardUser: sfGuardUser_4
+  Empleado_8:
+    rut: 16301297-9
+    nombres: Ignacio
+    apellidos: Ramos
+    email: ignacio@recytics.com
+    fecha_nac: '1981-10-18'
+    direccion: 'las palmas 1596'
+    ciudad_residencia: concepcion
+    telefono: '755693056'
+    fecha_contrato: '2008-07-09'
+    fecha_fin_contrato: '2015-01-01'
+    sueldo: '150000'
+    sfGuardUser: sfGuardUser_5
