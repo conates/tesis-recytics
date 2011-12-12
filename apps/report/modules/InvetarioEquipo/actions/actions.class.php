@@ -1,7 +1,7 @@
 <?php
 
-require_once dirname(__FILE__).'/../lib/InvetarioEquipoGeneratorConfiguration.class.php';
-require_once dirname(__FILE__).'/../lib/InvetarioEquipoGeneratorHelper.class.php';
+require_once dirname(__FILE__) . '/../lib/InvetarioEquipoGeneratorConfiguration.class.php';
+require_once dirname(__FILE__) . '/../lib/InvetarioEquipoGeneratorHelper.class.php';
 
 /**
  * InvetarioEquipo actions.
@@ -11,8 +11,8 @@ require_once dirname(__FILE__).'/../lib/InvetarioEquipoGeneratorHelper.class.php
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class InvetarioEquipoActions extends autoInvetarioEquipoActions
-{
+class InvetarioEquipoActions extends autoInvetarioEquipoActions {
+
     protected function buildQuery() {
         $query = parent::buildQuery();
         $query->addSelect("r.id, c.tipo as tipo, c.nombre_categoria as categoria, count(r.categoria_id) as cantidad")
@@ -23,12 +23,13 @@ class InvetarioEquipoActions extends autoInvetarioEquipoActions
         ;
         return $query;
     }
+
     public function executeExcel(sfWebRequest $request) {
         $this->setLayout(false);
         $this->getResponse()->setHttpHeader('Content-type', 'application/vnd.ms-excel');
         $this->getResponse()->setHttpHeader('Content-Disposition', 'inline; filename="InventarioPiezas.xls"');
-        $this->data = Doctrine::getTable('Pieza')->getLitado();
-       // die("<pre>".print_r($this->data,1)."</pre>");
+        $this->data = Doctrine::getTable('Equipo')->getLitadoEquipo();
+        // die("<pre>".print_r($this->data,1)."</pre>");
     }
-    
+
 }
