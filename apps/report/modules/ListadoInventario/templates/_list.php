@@ -27,7 +27,7 @@
         <?php $isDisabledResetButton = ($hasFilters->getRawValue()) ? '' : ' ui-state-disabled' ?>
         <?php echo link_to(UIHelper::addIconByConf('reset') . __('Resetear', array(), 'sf_admin'), 'pieza_ListadoInventario_collection', array('action' => 'filter'), array('query_string' => '_reset', 'method' => 'post', 'class' => 'fg-button ui-state-default fg-button-icon-left ui-corner-right'.$isDisabledResetButton)) ?></span>
       </div>
-            <h1><span class="ui-icon ui-icon-triangle-1-s"></span> <?php echo __('ListadoInventario List', array(), 'messages') ?></h1>
+            <h1><span class="ui-icon ui-icon-triangle-1-s"></span> <?php echo __('Inventario de Piezas', array(), 'messages') ?></h1>
     </caption>
 
     <thead class="ui-widget-header">
