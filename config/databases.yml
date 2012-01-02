@@ -5,6 +5,6 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=tesis
-      username: root
-      password: 
+      dsn:      pgsql:host=localhost;dbname=tesis
+      username: postgres
+      password: caronates
